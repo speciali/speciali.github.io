@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="总结," />
+  <meta name="keywords" content="JPA," />
 
 
 
@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="技术栈搭建规划(持续更新) JAVA基础 jvm原理以及垃圾回收机制 线程并发，线程池   缓存Redis   设计模式及应用 经典框架源码 微服务 消息中间件原理及应用RabbitMQ,Kafka 数据库设计，优化 Docker Python Go">
-<meta name="keywords" content="总结">
+<meta name="description" content="JPA相关知识总结 可以通过自定义的JPQL语句完成update和delete操作，但是在此处的JPQL不支持insert操作 &#x2F;&#x2F;在@Query注解中编写JPQL语句，必须用@Modify注解修饰，通知SpringData使用update和delete操作 &#x2F;&#x2F;这里的update和delete操作需要使用事务，所以需要写service层 &#x2F;&#x2F;返回值为int类型，返回操作影响的行数  123@Mo">
+<meta name="keywords" content="JPA">
 <meta property="og:type" content="article">
-<meta property="og:title" content="技术栈">
-<meta property="og:url" content="http:&#x2F;&#x2F;speciali.coding.me&#x2F;2019&#x2F;10&#x2F;19&#x2F;technology&#x2F;index.html">
+<meta property="og:title" content="JPA总结">
+<meta property="og:url" content="http:&#x2F;&#x2F;speciali.coding.me&#x2F;2019&#x2F;10&#x2F;23&#x2F;jpa&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="技术栈搭建规划(持续更新) JAVA基础 jvm原理以及垃圾回收机制 线程并发，线程池   缓存Redis   设计模式及应用 经典框架源码 微服务 消息中间件原理及应用RabbitMQ,Kafka 数据库设计，优化 Docker Python Go">
+<meta property="og:description" content="JPA相关知识总结 可以通过自定义的JPQL语句完成update和delete操作，但是在此处的JPQL不支持insert操作 &#x2F;&#x2F;在@Query注解中编写JPQL语句，必须用@Modify注解修饰，通知SpringData使用update和delete操作 &#x2F;&#x2F;这里的update和delete操作需要使用事务，所以需要写service层 &#x2F;&#x2F;返回值为int类型，返回操作影响的行数  123@Mo">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-22T03:07:14.438Z">
+<meta property="og:updated_time" content="2019-10-23T09:39:27.544Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://speciali.coding.me/2019/10/19/technology/"/>
+  <link rel="canonical" href="http://speciali.coding.me/2019/10/23/jpa/"/>
 
 
 
 
 
-  <title>技术栈 | Speciali</title>
+  <title>JPA总结 | Speciali</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://speciali.coding.me/2019/10/19/technology/">
+    <link itemprop="mainEntityOfPage" href="http://speciali.coding.me/2019/10/23/jpa/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Li">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">技术栈</h1>
+          <h1 class="post-title" itemprop="name headline">JPA总结</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-19T11:27:59+08:00">
-                2019-10-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-23T17:23:22+08:00">
+                2019-10-23
               </time>
             
 
@@ -307,28 +307,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index">
-                    <span itemprop="name">技术</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -357,24 +335,33 @@
       
 
       
-        <h1 id="技术栈搭建规划-持续更新"><a href="#技术栈搭建规划-持续更新" class="headerlink" title="技术栈搭建规划(持续更新)"></a><strong>技术栈搭建规划(持续更新)</strong></h1><ul>
-<li>JAVA基础</li>
-<li>jvm原理以及垃圾回收机制</li>
-<li>线程并发，线程池</li>
-</ul>
-<ul>
-<li>缓存Redis</li>
-</ul>
-<ul>
-<li>设计模式及应用</li>
-<li>经典框架源码</li>
-<li>微服务</li>
-<li>消息中间件原理及应用RabbitMQ,Kafka</li>
-<li>数据库设计，优化</li>
-<li>Docker</li>
-<li>Python</li>
-<li>Go</li>
-</ul>
+        <h2 id="JPA相关知识总结"><a href="#JPA相关知识总结" class="headerlink" title="JPA相关知识总结"></a>JPA相关知识总结</h2><ol>
+<li>可以通过自定义的JPQL语句完成update和delete操作，但是在此处的JPQL不支持insert操作<br> //在@Query注解中编写JPQL语句，必须用@Modify注解修饰，通知SpringData使用update和delete操作<br> //这里的update和delete操作需要使用事务，所以需要写service层<br> //返回值为int类型，返回操作影响的行数</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Modifying</span></span><br><span class="line"><span class="meta">@Query</span>(<span class="string">"UPDATE Person p SET p.age = :age where p.name = :name"</span>)</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">updatePersonAgeByName1</span><span class="params">(@Param(<span class="string">"age"</span>)</span> <span class="keyword">int</span> age, @<span class="title">Param</span><span class="params">(<span class="string">"name"</span>)</span> String name)</span>;</span><br></pre></td></tr></table></figure>
+
+
+<ol start="2">
+<li><p>Spring-data-jpa表实体的字段和表的字段是一一对应的。想在表字段的基础上添加几个返回的字段<br>解：在实体类中添加我们想添加的字段，并加上注解：@Transient，在get，set方法上添加此注解。</p>
+</li>
+<li><p>Jpa一个一对多的关联查询规则：<br>首先findBy是必须写的，表示使用JPA规则进行查询。<br>如果查询的是本张表中的内容，例如查询本张表中的name字段就可以这么写：findByName()。<br>如果查询的是楼层中的name字段就可以这么写：findByFloor_Name()。<br>如果是既要查询本张表中的name字段，也要查询楼层中的name字段，就可以这么写：findByFloor_NameAndName()。</p>
+</li>
+</ol>
+<p>从上面的案例就可以看出可以在findBy后面添加要关联的实体类，然后在实体类后面写上“<em>”，”</em>“符号后面是添加关联表的字段而不是本身表的字段，这点要记住。如何还想关联更多的表可以在后面添加：And+表名字+“_”+表中要查询的字段。或者只是想关联本身的查询字段可以在后面添加：And+查询的字段。</p>
+<ol start="4">
+<li>jpa查询方法命名规则网址：<a href="https://www.jb51.net/article/111056.htm" target="_blank" rel="noopener">https://www.jb51.net/article/111056.htm</a><br>findByOperationStepIDAndSequenceNoLessThan（小于）<br>findByOperationStepIDAndSequenceNoGreaterThan（大于）</li>
+</ol>
+<ol start="5">
+<li>获取数据库相关数据</li>
+</ol>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">String url=<span class="string">"jdbc:mysql://"</span>+datasource.getServerAndPort()+<span class="string">"/"</span>;</span><br><span class="line">Connection conn = DriverManager.getConnection(url, name,passworld);</span><br><span class="line">DatabaseMetaData dm=conn.getMetaData();</span><br><span class="line">ResultSet rs = dm.getCatalogs();</span><br><span class="line"><span class="keyword">while</span> (rs.next()) &#123;</span><br><span class="line">    String name = rs.getString(<span class="string">"TABLE_CAT"</span>);  <span class="comment">//获取数据库名</span></span><br><span class="line">ResultSet rs = dm.getTables(name,name,<span class="keyword">null</span>,<span class="keyword">new</span> String[]&#123;<span class="string">"TABLE"</span>&#125;);<span class="comment">//参数1和参数2都是数据库名，之所以要两个参数，是因为该函数要兼容不同的数据库,参数2可给正则的形式。参数3是表格</span></span><br><span class="line">rs.getString(<span class="string">"TABLE_NAME"</span>)<span class="comment">//获取表名</span></span><br><span class="line"></span><br><span class="line">Statement st = conn.createStatement();</span><br><span class="line">st.execute(<span class="string">"use abc"</span>); <span class="comment">// execute()方法可以执行任意sql，</span></span><br><span class="line">ResultSet rs2 = st.executeQuery(<span class="string">" select * from stud3"</span>);</span><br><span class="line"><span class="keyword">while</span> (rs2.next()) &#123;</span><br><span class="line">String str = rs2.getString(<span class="number">2</span>);</span><br><span class="line">&#125;                      <span class="comment">//获取数据表数据</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+<ol start="6">
+<li>idea中连接mysql逆向生成实体类<br>1）view—–选择tool windows————选择persistence并点击<br>如果persistence没有点击窗口右上角倒数第二个图标（两个长方形重叠，在放大镜旁）<br>点击modules点击加号选择api<br>2）点击persistence后会出现persistence窗口，persistence下出现我们连接的数据库，就是箭头指向的。<br>3）按下图，  选中并单击添加的数据库——————选择Generate Persistence Mapping———选择By Database Schema并点击<br>点击By Database Schema ，弹出如窗口，填写圈起来的部分<br>choose Data Source ————————点击右边下三角选择数据库<br>Package———————-选择项目中的某个包，生成的实体将会变成一个类文件放在那个包下<br>第三部分显示的是数据库的表，每个表生成一个实体，勾选，想要生成实体的表，然后按右下角OK即可。这样就可以生成实体了。</li>
+</ol>
 
       
     </div>
@@ -424,7 +411,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://speciali.coding.me/2019/10/19/technology/" title="技术栈">http://speciali.coding.me/2019/10/19/technology/</a>
+    <a href="http://speciali.coding.me/2019/10/23/jpa/" title="JPA总结">http://speciali.coding.me/2019/10/23/jpa/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -449,7 +436,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E6%80%BB%E7%BB%93/" rel="tag"><i class="fa fa-tag"></i> 总结</a>
+            <a href="/tags/JPA/" rel="tag"><i class="fa fa-tag"></i> JPA</a>
           
         </div>
       
@@ -462,8 +449,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/18/first/" rel="next" title="让记录成为一种习惯式">
-                <i class="fa fa-chevron-left"></i> 让记录成为一种习惯式
+              <a href="/2019/10/23/springBoot/" rel="next" title="SpringBoot总结">
+                <i class="fa fa-chevron-left"></i> SpringBoot总结
               </a>
             
           </div>
@@ -471,10 +458,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/19/about/" rel="prev" title="关于我">
-                关于我 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -620,7 +603,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#技术栈搭建规划-持续更新"><span class="nav-number">1.</span> <span class="nav-text">技术栈搭建规划(持续更新)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#JPA相关知识总结"><span class="nav-number">1.</span> <span class="nav-text">JPA相关知识总结</span></a></li></ol></div>
             
 
           </div>
