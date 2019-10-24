@@ -86,16 +86,18 @@
 
 
 
-<meta name="description" content="开发工具日常使用总结 一、idea intellJ 添加类的头部统一注释File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。  提示忽略大小写File——》Sensitive将右侧的 case sensitive completion 修改为NONE  Inte">
+<meta name="description" content="开发工具日常使用总结 idea intellJ 添加类的头部统一注释File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。  提示忽略大小写File——》Sensitive将右侧的 case sensitive completion 修改为NONE  Intell">
 <meta name="keywords" content="总结">
 <meta property="og:type" content="article">
 <meta property="og:title" content="开发工具基本使用总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="开发工具日常使用总结 一、idea intellJ 添加类的头部统一注释File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。  提示忽略大小写File——》Sensitive将右侧的 case sensitive completion 修改为NONE  Inte">
+<meta property="og:description" content="开发工具日常使用总结 idea intellJ 添加类的头部统一注释File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。  提示忽略大小写File——》Sensitive将右侧的 case sensitive completion 修改为NONE  Intell">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-24T02:31:50.797Z">
+<meta property="og:image" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;1.jpg">
+<meta property="og:updated_time" content="2019-10-24T02:50:36.123Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;1.jpg">
 
 
 
@@ -358,22 +360,20 @@
 
       
         <p><strong>开发工具日常使用总结</strong></p>
-<h2 id="一、idea-intellJ"><a href="#一、idea-intellJ" class="headerlink" title="一、idea intellJ"></a>一、idea intellJ</h2><ol>
+<h2 id="idea-intellJ"><a href="#idea-intellJ" class="headerlink" title="idea intellJ"></a>idea intellJ</h2><ol>
 <li><p>添加类的头部统一注释<br>File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。</p>
 </li>
 <li><p>提示忽略大小写<br>File——》Sensitive<br>将右侧的 case sensitive completion 修改为NONE</p>
 </li>
 <li><p>IntelliJ IDEA自动优化导入包<br>Settings→Editor→General→Auto Import<br>选中Optimize imports on the fly和Add unambiguous imports on the fly</p>
-</li>
-</ol>
 <p>Optimize imports on the fly：自动去掉一些没有用到的包<br>Add unambiguous imports on the fly：自动帮我们优化导入的包</p>
-<ol start="4">
+</li>
 <li><p>自动生成返回对象右键<br>Refactor-Extract-Variable，也可以按快捷键ctrl+alt+v 或者加“.var”回车</p>
 </li>
 <li><p>快捷键</p>
 </li>
 </ol>
-<h2 id="二、Git"><a href="#二、Git" class="headerlink" title="二、Git"></a>二、Git</h2><ol>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
 <li>使用gitlub上传项目网址<br>Git上传gitlub:</li>
 </ol>
 <blockquote>
@@ -400,7 +400,7 @@
 
 
 
-<h2 id="三、Redis"><a href="#三、Redis" class="headerlink" title="三、Redis"></a>三、Redis</h2><ol>
+<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><ol>
 <li>本地搭建Redis安装配置的网址</li>
 </ol>
 <blockquote>
@@ -412,9 +412,13 @@
 </blockquote>
 </li>
 </ol>
-<h2 id="四、XShell"><a href="#四、XShell" class="headerlink" title="四、XShell"></a>四、XShell</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">open 打开xshell时用以打开会话窗口</span><br><span class="line">ls 用于显示当前目录下的文件及文件夹</span><br><span class="line">cd 进入某文件夹 可以是相对路径也可以是绝对路径</span><br><span class="line">cd .. 返回上一级目录</span><br><span class="line">cd / 返回根目录</span><br><span class="line">rz/sz 分别是文件的上传/下载</span><br><span class="line">mv a b 将a文件重命名为b(文件夹也可以)</span><br><span class="line">mv a /home 将a 文件移动到 根目录的home文件夹中</span><br><span class="line">cp 复制，与mv有同样的用法</span><br><span class="line">cp * /home 将当前目录所有未隐藏文件复制到home下</span><br><span class="line">mkdir Files 创建Files文件夹或删除空文件夹Files</span><br><span class="line">rm file 删除文件file</span><br><span class="line">rm * 删除当前目录下所有未隐藏文件，不删除目录</span><br><span class="line">rm -rf Files 删除Files文件夹及其下所有文件夹和文件</span><br><span class="line">more file 查看file的文件内容</span><br><span class="line">vi file 编辑file文件 </span><br><span class="line">a/i 都可进入到编辑模式对内容进行编辑。 按ESC，然后输入 :进入到命令行模式，q退出，q！不保存退出,wq保存退出。</span><br><span class="line">将war包放入tomcat的webapps目录下，重启tomcat </span><br><span class="line">- 在bin目录下输入./shutdown.sh，关闭tomcat， </span><br><span class="line">- ps -ef|grep tomcat 用此命令查看tomcat是否被关闭，ps为查看进程，grep tomcat为查看与tomcat相关的。</span><br></pre></td></tr></table></figure>
+<h2 id="XShell"><a href="#XShell" class="headerlink" title="XShell"></a>XShell</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">open 打开xshell时用以打开会话窗口</span><br><span class="line">ls 用于显示当前目录下的文件及文件夹</span><br><span class="line">cd 进入某文件夹 可以是相对路径也可以是绝对路径</span><br><span class="line">cd .. 返回上一级目录</span><br><span class="line">cd / 返回根目录</span><br><span class="line">rz/sz 分别是文件的上传/下载</span><br><span class="line">mv a b 将a文件重命名为b(文件夹也可以)</span><br><span class="line">mv a /home 将a 文件移动到 根目录的home文件夹中</span><br><span class="line">cp 复制，与mv有同样的用法</span><br><span class="line">cp * /home 将当前目录所有未隐藏文件复制到home下</span><br><span class="line">mkdir Files 创建Files文件夹或删除空文件夹Files</span><br><span class="line">rm file 删除文件file</span><br><span class="line">rm * 删除当前目录下所有未隐藏文件，不删除目录</span><br><span class="line">rm -rf Files 删除Files文件夹及其下所有文件夹和文件</span><br><span class="line">more file 查看file的文件内容</span><br><span class="line">vi file 编辑file文件 </span><br><span class="line">a/i 都可进入到编辑模式对内容进行编辑。 按ESC，然后输入 :进入到命令行模式，q退出，q！不保存退出,wq保存退出。</span><br><span class="line">将war包放入tomcat的webapps目录下，重启tomcat </span><br><span class="line">- 在bin目录下输入./shutdown.sh，关闭tomcat， </span><br><span class="line">- ps -ef|grep tomcat 用此命令查看tomcat是否被关闭，ps为查看进程，grep tomcat为查看与tomcat相关的。</span><br></pre></td></tr></table></figure>
 
 
+
+
+
+<p><img src="/2019/10/24/devTool/1.jpg" alt></p>
 
       
     </div>
@@ -656,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、idea-intellJ"><span class="nav-number">1.</span> <span class="nav-text">一、idea intellJ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、Git"><span class="nav-number">2.</span> <span class="nav-text">二、Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、Redis"><span class="nav-number">3.</span> <span class="nav-text">三、Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、XShell"><span class="nav-number">4.</span> <span class="nav-text">四、XShell</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#idea-intellJ"><span class="nav-number">1.</span> <span class="nav-text">idea intellJ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">3.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XShell"><span class="nav-number">4.</span> <span class="nav-text">XShell</span></a></li></ol></div>
             
 
           </div>
