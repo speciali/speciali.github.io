@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="java8新特性 注意事项 Java 8 Lambda 捕获外部变量 – 不可变 为什么 Lambda 表达式(匿名类) 不能访问非 final 的局部变量呢？ 因为实例变量存在堆中，而局部变量是在栈上分配，Lambda 表达(匿名类) 会在另一个线程中执行。如果在线程中要直接访问一个局部变量，可能线程执行时该局部变量已经被销毁了，而 final 类型的局部变量在 Lambda 表达式(匿名类)">
+<meta name="description" content="java8新特性 Lambda表达式Stream生成流在 Java 8 中, 集合接口有两个方法来生成流：stream() − 为集合创建串行流。parallelStream() − 为集合创建并行流。 forEach‘forEach’ 来迭代流中的每个数据 12Random random = new Random();random.ints().limit(10).forEach(System.">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java8新特性">
 <meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;11&#x2F;30&#x2F;java8&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="java8新特性 注意事项 Java 8 Lambda 捕获外部变量 – 不可变 为什么 Lambda 表达式(匿名类) 不能访问非 final 的局部变量呢？ 因为实例变量存在堆中，而局部变量是在栈上分配，Lambda 表达(匿名类) 会在另一个线程中执行。如果在线程中要直接访问一个局部变量，可能线程执行时该局部变量已经被销毁了，而 final 类型的局部变量在 Lambda 表达式(匿名类)">
+<meta property="og:description" content="java8新特性 Lambda表达式Stream生成流在 Java 8 中, 集合接口有两个方法来生成流：stream() − 为集合创建串行流。parallelStream() − 为集合创建并行流。 forEach‘forEach’ 来迭代流中的每个数据 12Random random = new Random();random.ints().limit(10).forEach(System.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-11-30T02:37:29.390Z">
+<meta property="og:updated_time" content="2019-11-30T07:54:17.499Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -358,6 +358,23 @@
 
       
         <p><strong>java8新特性</strong></p>
+<h2 id="Lambda表达式"><a href="#Lambda表达式" class="headerlink" title="Lambda表达式"></a>Lambda表达式</h2><h2 id="Stream"><a href="#Stream" class="headerlink" title="Stream"></a>Stream</h2><h4 id="生成流"><a href="#生成流" class="headerlink" title="生成流"></a>生成流</h4><p>在 Java 8 中, 集合接口有两个方法来生成流：<br>stream() − 为集合创建串行流。<br>parallelStream() − 为集合创建并行流。</p>
+<h4 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h4><p>‘forEach’ 来迭代流中的每个数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Random random = <span class="keyword">new</span> Random();</span><br><span class="line">random.ints().limit(<span class="number">10</span>).forEach(System.out::println);</span><br></pre></td></tr></table></figure>
+
+<h4 id="map"><a href="#map" class="headerlink" title="map"></a>map</h4><p>map 方法用于映射每个元素到对应的结果</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; numbers = Arrays.asList(<span class="number">3</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">7</span>, <span class="number">3</span>, <span class="number">5</span>);</span><br><span class="line"><span class="comment">// 获取对应的平方数</span></span><br><span class="line">List&lt;Integer&gt; squaresList = numbers.stream().map( i -&gt; i*i).distinct().collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+<h4 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h4><p>filter 方法用于通过设置的条件过滤出元素</p>
+<h4 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h4><p>limit 方法用于获取指定数量的流</p>
+<h4 id="sorted"><a href="#sorted" class="headerlink" title="sorted"></a>sorted</h4><p>sorted 方法用于对流进行排序。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//自然序列</span></span><br><span class="line">studentList.stream().sorted().collect(Collectors.toList());</span><br><span class="line"><span class="comment">//逆序</span></span><br><span class="line">studentList.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());</span><br></pre></td></tr></table></figure>
+
+
+<h4 id="Collectors"><a href="#Collectors" class="headerlink" title="Collectors"></a>Collectors</h4><p>Collectors 类实现了很多归约操作，例如将流转换成集合和聚合元素</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt;strings = Arrays.asList(<span class="string">"abc"</span>, <span class="string">""</span>, <span class="string">"bc"</span>, <span class="string">"efg"</span>, <span class="string">"abcd"</span>,<span class="string">""</span>, <span class="string">"jkl"</span>);</span><br><span class="line"><span class="comment">//返回列表</span></span><br><span class="line">List&lt;String&gt; filtered = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.toList());</span><br><span class="line"></span><br><span class="line"><span class="comment">//返回字符串</span></span><br><span class="line">String mergedString = strings.stream().filter(string -&gt; !string.isEmpty()).collect(Collectors.joining(<span class="string">", "</span>));</span><br></pre></td></tr></table></figure>
+
+
 <h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><ol>
 <li><p>Java 8 Lambda 捕获外部变量 – 不可变</p>
 <p>为什么 Lambda 表达式(匿名类) 不能访问非 final 的局部变量呢？ 因为实例变量存在堆中，而局部变量是在栈上分配，Lambda 表达(匿名类) 会在另一个线程中执行。如果在线程中要直接访问一个局部变量，可能线程执行时该局部变量已经被销毁了，而 final 类型的局部变量在 Lambda 表达式(匿名类) 中其实是局部变量的一个拷贝。</p>
@@ -604,7 +621,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">1.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Lambda表达式"><span class="nav-number">1.</span> <span class="nav-text">Lambda表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stream"><span class="nav-number">2.</span> <span class="nav-text">Stream</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#生成流"><span class="nav-number">2.0.1.</span> <span class="nav-text">生成流</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#forEach"><span class="nav-number">2.0.2.</span> <span class="nav-text">forEach</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#map"><span class="nav-number">2.0.3.</span> <span class="nav-text">map</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#filter"><span class="nav-number">2.0.4.</span> <span class="nav-text">filter</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#limit"><span class="nav-number">2.0.5.</span> <span class="nav-text">limit</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#sorted"><span class="nav-number">2.0.6.</span> <span class="nav-text">sorted</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Collectors"><span class="nav-number">2.0.7.</span> <span class="nav-text">Collectors</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
             
 
           </div>
