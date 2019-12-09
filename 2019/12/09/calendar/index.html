@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="开发工具," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -86,18 +86,16 @@
 
 
 
-<meta name="description" content="开发工具日常使用总结 idea intellJ 添加类的头部统一注释File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。  提示忽略大小写File——》Sensitive将右侧的 case sensitive completion 修改为NONE  Intell">
-<meta name="keywords" content="开发工具">
+<meta name="description" content="Calendar Date 日期时间日常使用总结Date与String互转 Calendar转化为DateCalendar cal=Calendar.getInstance();Date date=cal.getTime();    Date转化为CalendarDate date=new Date();Calendar cal=Calendar.getInstance();cal.setTime">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开发工具基本使用总结（持续更新）">
-<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;index.html">
+<meta property="og:title" content="calendar">
+<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;12&#x2F;09&#x2F;calendar&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="开发工具日常使用总结 idea intellJ 添加类的头部统一注释File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。  提示忽略大小写File——》Sensitive将右侧的 case sensitive completion 修改为NONE  Intell">
+<meta property="og:description" content="Calendar Date 日期时间日常使用总结Date与String互转 Calendar转化为DateCalendar cal=Calendar.getInstance();Date date=cal.getTime();    Date转化为CalendarDate date=new Date();Calendar cal=Calendar.getInstance();cal.setTime">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;1.jpg">
-<meta property="og:updated_time" content="2019-11-30T07:23:21.767Z">
+<meta property="og:updated_time" content="2019-12-09T10:45:28.077Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;1.jpg">
 
 
 
@@ -127,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://doveli.xyz/2019/10/24/devTool/"/>
+  <link rel="canonical" href="http://doveli.xyz/2019/12/09/calendar/"/>
 
 
 
 
 
-  <title>开发工具基本使用总结（持续更新） | Speciali</title>
+  <title>calendar | Speciali</title>
   
 
 
@@ -270,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2019/10/24/devTool/">
+    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2019/12/09/calendar/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Li">
@@ -287,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">开发工具基本使用总结（持续更新）</h1>
+          <h1 class="post-title" itemprop="name headline">calendar</h1>
         
 
         <div class="post-meta">
@@ -299,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-24T10:20:48+08:00">
-                2019-10-24
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-09T18:19:52+08:00">
+                2019-12-09
               </time>
             
 
@@ -359,67 +357,90 @@
       
 
       
-        <p><strong>开发工具日常使用总结</strong></p>
-<h2 id="idea-intellJ"><a href="#idea-intellJ" class="headerlink" title="idea intellJ"></a>idea intellJ</h2><ol>
-<li><p>添加类的头部统一注释<br>File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。</p>
+        <h2 id="Calendar-Date-日期时间日常使用总结"><a href="#Calendar-Date-日期时间日常使用总结" class="headerlink" title="Calendar Date 日期时间日常使用总结"></a>Calendar Date 日期时间日常使用总结</h2><h4 id="Date与String互转"><a href="#Date与String互转" class="headerlink" title="Date与String互转"></a>Date与String互转</h4><ul>
+<li><p>Calendar转化为Date<br>Calendar cal=Calendar.getInstance();<br>Date date=cal.getTime();  </p>
+<ul>
+<li>Date转化为Calendar<br>Date date=new Date();<br>Calendar cal=Calendar.getInstance();<br>cal.setTime(date);</li>
+</ul>
 </li>
-<li><p>提示忽略大小写<br>File——》Sensitive<br>将右侧的 case sensitive completion 修改为NONE</p>
+</ul>
+<h4 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h4><p>成员方法<br>Calendar类的成员方法<br><strong>static Calendar getInstance()</strong></p>
+<p>使用默认时区和区域设置获取日历。通过该方法生成Calendar对象。<strong>Calendar cr=Calendar.getInstance()；</strong></p>
+<p><strong>public void set(int year,int month,int date,int hourofday,int minute,int second)</strong>    设置日历的年、月、日、时、分、秒。</p>
+<p><strong>public int get(int field)</strong>    返回给定日历字段的值。所谓字段就是年、月、日等等。</p>
+<p><strong>public void setTime(Date date)</strong>    使用给定的Date设置此日历的时间。</p>
+<p><strong>public Date getTime()</strong>    返回一个Date表示此日历的时间。</p>
+<p><strong>abstract void add(int field,int amount)</strong>    按照日历的规则，给指定字段添加或减少时间量。</p>
+<p><strong>public long getTimeInMillies()</strong>    以毫秒为单位返回该日历的时间值。</p>
+<ol>
+<li><p>当天24点时间<br>public static Date getTimesnight() {</p>
+<pre><code>Calendar cal = Calendar.getInstance();
+cal.set(Calendar.HOUR_OF_DAY, 24);
+cal.set(Calendar.SECOND, 0);
+cal.set(Calendar.MINUTE, 0);
+cal.set(Calendar.MILLISECOND, 0);
+return cal.getTime();</code></pre><p>}</p>
 </li>
-<li><p>IntelliJ IDEA自动优化导入包<br>Settings→Editor→General→Auto Import<br>选中Optimize imports on the fly和Add unambiguous imports on the fly</p>
-<p>Optimize imports on the fly：自动去掉一些没有用到的包<br>Add unambiguous imports on the fly：自动帮我们优化导入的包</p>
+<li><p>获得当天0点时间<br>public static Date getTimesmorning() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.set(Calendar.HOUR_OF_DAY, 0);<br>   cal.set(Calendar.SECOND, 0);<br>   cal.set(Calendar.MINUTE, 0);<br>   cal.set(Calendar.MILLISECOND, 0);<br>   return cal.getTime();<br>}</p>
 </li>
-<li><p>自动生成返回对象右键<br>Refactor-Extract-Variable，也可以按快捷键ctrl+alt+v 或者加“.var”回车</p>
+<li><p>获得昨天0点时间<br>public static Date getYesterdaymorning() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.setTimeInMillis(getTimesmorning().getTime()-3600<em>24</em>1000);<br>   return cal.getTime();<br>}</p>
 </li>
-<li><p>快捷键</p>
+<li><p>获得当天近7天时间<br>public static Date getWeekFromNow() {</p>
+<pre><code>Calendar cal = Calendar.getInstance();
+cal.setTimeInMillis( getTimesmorning().getTime()-3600*24*1000*7);
+return cal.getTime();</code></pre><p>}</p>
 </li>
-</ol>
-<p>idea 中代码大小写切换快捷键 ：ctr+shift+u</p>
-<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><ol>
-<li>使用gitlub上传项目网址<br>Git上传gitlub:</li>
-</ol>
-<blockquote>
-<p><a href="https://blog.csdn.net/ly0303521/article/details/53036535" target="_blank" rel="noopener">https://blog.csdn.net/ly0303521/article/details/53036535</a></p>
-</blockquote>
-<p>git: windows git ssh keys生成:</p>
-<blockquote>
-<p><a href="https://www.cnblogs.com/achengmu/p/6095046.html" target="_blank" rel="noopener">https://www.cnblogs.com/achengmu/p/6095046.html</a></p>
-</blockquote>
-<ol start="2">
-<li>git新项目生成文件<br>git clone 加上gitlub项目上那个名字一串 </li>
-</ol>
-<ol start="3">
-<li>gitlub创建分支并上传代码以及相关命令<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="string">"zhangli"</span></span><br><span class="line">git checkout <span class="string">"zhangli"</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m <span class="string">"zhangli"</span></span><br><span class="line">git pull origin zhangli</span><br><span class="line">git push origin zhangli</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-
+<li><p>获得本周一0点时间<br>public static Date getTimesWeekmorning() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);<br>   cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);<br>   return cal.getTime();<br>}</p>
 </li>
-</ol>
-<ol start="4">
-<li>项目打包到服务器命令</li>
-</ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp                显示进程</span><br><span class="line">Kill 进程号                   杀死进程</span><br><span class="line">Cd /usr/local/bin/            到目录</span><br><span class="line">Ls -l                         显示所有文件</span><br><span class="line">Mkdir pm20181105              创建文件夹</span><br><span class="line">Rz -y                         上传</span><br><span class="line">nohup java -jar im-po.war &gt;&gt;po.out &amp;  执行</span><br><span class="line">tail -f po.out                发布项目</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h2 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h2><ol>
-<li>本地搭建Redis安装配置的网址</li>
-</ol>
-<blockquote>
-<p><a href="https://blog.csdn.net/chen529834149/article/details/78899037" target="_blank" rel="noopener">https://blog.csdn.net/chen529834149/article/details/78899037</a><br><a href="https://blog.csdn.net/qq_26562641/article/details/54947304" target="_blank" rel="noopener">https://blog.csdn.net/qq_26562641/article/details/54947304</a></p>
-</blockquote>
-<ol start="2">
-<li>springboot使用redis缓存：<blockquote>
-<p><a href="https://www.cnblogs.com/gdpuzxs/p/7222309.html" target="_blank" rel="noopener">https://www.cnblogs.com/gdpuzxs/p/7222309.html</a></p>
-</blockquote>
+<li><p>获得上一周周一日期<br>public static Date getLastWeekmorning(Date date) {<br> Calendar cal = Calendar.getInstance();<br> cal.setTime(date);<br> cal.add(Calendar.WEEK_OF_MONTH,-1);<br> cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);<br> cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);<br> return cal.getTime();<br>}</p>
 </li>
 </ol>
-<h2 id="XShell"><a href="#XShell" class="headerlink" title="XShell"></a>XShell</h2><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">open 打开xshell时用以打开会话窗口</span><br><span class="line">ls 用于显示当前目录下的文件及文件夹</span><br><span class="line">cd 进入某文件夹 可以是相对路径也可以是绝对路径</span><br><span class="line">cd .. 返回上一级目录</span><br><span class="line">cd / 返回根目录</span><br><span class="line">rz/sz 分别是文件的上传/下载</span><br><span class="line">mv a b 将a文件重命名为b(文件夹也可以)</span><br><span class="line">mv a /home 将a 文件移动到 根目录的home文件夹中</span><br><span class="line">cp 复制，与mv有同样的用法</span><br><span class="line">cp * /home 将当前目录所有未隐藏文件复制到home下</span><br><span class="line">mkdir Files 创建Files文件夹或删除空文件夹Files</span><br><span class="line">rm file 删除文件file</span><br><span class="line">rm * 删除当前目录下所有未隐藏文件，不删除目录</span><br><span class="line">rm -rf Files 删除Files文件夹及其下所有文件夹和文件</span><br><span class="line">more file 查看file的文件内容</span><br><span class="line">vi file 编辑file文件 </span><br><span class="line">a/i 都可进入到编辑模式对内容进行编辑。 按ESC，然后输入 :进入到命令行模式，q退出，q！不保存退出,wq保存退出。</span><br><span class="line">将war包放入tomcat的webapps目录下，重启tomcat </span><br><span class="line">- 在bin目录下输入./shutdown.sh，关闭tomcat， </span><br><span class="line">- ps -ef|grep tomcat 用此命令查看tomcat是否被关闭，ps为查看进程，grep tomcat为查看与tomcat相关的。</span><br></pre></td></tr></table></figure>
-
-
-
-
-
-<p><img src="/2019/10/24/devTool/1.jpg" alt></p>
+<ol start="6">
+<li>获得本周日24点时间<br>public static Date getTimesWeeknight() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.setTime(getTimesWeekmorning());<br>   cal.add(Calendar.DAY_OF_WEEK, 7);<br>   return cal.getTime();<br>}</li>
+</ol>
+<ol start="7">
+<li><p>获得本月第一天0点时间<br>public static Date getTimesMonthmorning() {</p>
+<pre><code>Calendar cal = Calendar.getInstance();
+cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
+cal.set(Calendar.DAY_OF_MONTH, cal.getActualMinimum(Calendar.DAY_OF_MONTH));
+return cal.getTime();</code></pre><p>}</p>
+</li>
+<li><p>获得本月最后一天24点时间<br>public static Date getTimesMonthnight() {</p>
+<pre><code>Calendar cal = Calendar.getInstance();
+cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
+cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
+cal.set(Calendar.HOUR_OF_DAY, 24);
+return cal.getTime();</code></pre><p>}</p>
+<ol start="9">
+<li>上月初0点时间<br>public static Date getLastMonthStartMorning() {<br> Calendar cal = Calendar.getInstance();<br> cal.setTime(getTimesMonthmorning());<br> cal.add(Calendar.MONTH, -1);<br> return cal.getTime();<br>}</li>
+<li>本季度开始点时间<br>public static Date getCurrentQuarterStartTime() {<br>Calendar c = Calendar.getInstance();<br>int currentMonth = c.get(Calendar.MONTH) + 1;<br>SimpleDateFormat longSdf = new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);<br>SimpleDateFormat shortSdf = new SimpleDateFormat(“yyyy-MM-dd”);<br>Date now = null;<br>try {<pre><code>if (currentMonth &gt;= 1 &amp;&amp; currentMonth &lt;= 3)
+    c.set(Calendar.MONTH, 0);
+else if (currentMonth &gt;= 4 &amp;&amp; currentMonth &lt;= 6)
+    c.set(Calendar.MONTH, 3);
+else if (currentMonth &gt;= 7 &amp;&amp; currentMonth &lt;= 9)
+    c.set(Calendar.MONTH, 4);
+else if (currentMonth &gt;= 10 &amp;&amp; currentMonth &lt;= 12)
+    c.set(Calendar.MONTH, 9);
+c.set(Calendar.DATE, 1);
+now = longSdf.parse(shortSdf.format(c.getTime()) + &quot; 00:00:00&quot;);</code></pre>} catch (Exception e) {<pre><code>e.printStackTrace();</code></pre>}<br>return now;<br>}</li>
+</ol>
+</li>
+<li><p>当前季度的结束时时间</p>
+<p>public static Date getCurrentQuarterEndTime() {</p>
+<pre><code>Calendar cal = Calendar.getInstance();
+cal.setTime(getCurrentQuarterStartTime());
+cal.add(Calendar.MONTH, 3);
+return cal.getTime();</code></pre><p>}</p>
+<ol start="12">
+<li><p>本年开始点时间<br>public static Date getCurrentYearStartTime() {<br>Calendar cal = Calendar.getInstance();<br>cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);<br>cal.set(Calendar.DAY_OF_MONTH, cal.getActualMinimum(Calendar.YEAR));<br>return cal.getTime();<br>}</p>
+</li>
+<li><p>本年结束点时间<br>public static Date getCurrentYearEndTime() {<br>Calendar cal = Calendar.getInstance();<br>cal.setTime(getCurrentYearStartTime());<br>cal.add(Calendar.YEAR, 1);<br>return cal.getTime();<br>}</p>
+</li>
+<li><p>上年开始点时间<br>public static Date getLastYearStartTime() {<br>Calendar cal = Calendar.getInstance();<br>cal.setTime(getCurrentYearStartTime());<br>cal.add(Calendar.YEAR, -1);<br>return cal.getTime();<br>}</p>
+</li>
+</ol>
+</li>
+</ol>
 
       
     </div>
@@ -469,7 +490,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://doveli.xyz/2019/10/24/devTool/" title="开发工具基本使用总结（持续更新）">http://doveli.xyz/2019/10/24/devTool/</a>
+    <a href="http://doveli.xyz/2019/12/09/calendar/" title="calendar">http://doveli.xyz/2019/12/09/calendar/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -494,7 +515,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E5%BC%80%E5%8F%91%E5%B7%A5%E5%85%B7/" rel="tag"><i class="fa fa-tag"></i> 开发工具</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
@@ -507,8 +528,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/23/jpa/" rel="next" title="JPA总结">
-                <i class="fa fa-chevron-left"></i> JPA总结
+              <a href="/2019/11/30/java8/" rel="next" title="java8新特性">
+                <i class="fa fa-chevron-left"></i> java8新特性
               </a>
             
           </div>
@@ -516,10 +537,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/28/dev-daily/" rel="prev" title="日常开发过程知识点">
-                日常开发过程知识点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -665,7 +682,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#idea-intellJ"><span class="nav-number">1.</span> <span class="nav-text">idea intellJ</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">2.</span> <span class="nav-text">Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis"><span class="nav-number">3.</span> <span class="nav-text">Redis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#XShell"><span class="nav-number">4.</span> <span class="nav-text">XShell</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Calendar-Date-日期时间日常使用总结"><span class="nav-number">1.</span> <span class="nav-text">Calendar Date 日期时间日常使用总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Date与String互转"><span class="nav-number">1.0.1.</span> <span class="nav-text">Date与String互转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calendar"><span class="nav-number">1.0.2.</span> <span class="nav-text">Calendar</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
