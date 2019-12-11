@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="SpringBoot," />
+  <meta name="keywords" content="java," />
 
 
 
@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="SpringBoot相关知识点总结 SpringBoot控制层参数url路径参数注解：@PathVariable  springboot忽略URL地址大小写配置   1234567891011121314import org.springframework.context.annotation.Configuration;import org.springframework.util.AntPat">
-<meta name="keywords" content="SpringBoot">
+<meta name="description" content="@Autowired 与@Resource的区别 @Autowired按byType自动注入，而@Resource默认按 byName自动注入  @Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired。  @Resource注解由J2EE提供，需要导入包javax.annotation.R">
+<meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot总结">
-<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;23&#x2F;springBoot&#x2F;index.html">
+<meta property="og:title" content="AutoWired与Resource">
+<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;12&#x2F;11&#x2F;AutoWired%E4%B8%8EResource&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="SpringBoot相关知识点总结 SpringBoot控制层参数url路径参数注解：@PathVariable  springboot忽略URL地址大小写配置   1234567891011121314import org.springframework.context.annotation.Configuration;import org.springframework.util.AntPat">
+<meta property="og:description" content="@Autowired 与@Resource的区别 @Autowired按byType自动注入，而@Resource默认按 byName自动注入  @Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired。  @Resource注解由J2EE提供，需要导入包javax.annotation.R">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-24T00:59:22.177Z">
+<meta property="og:updated_time" content="2019-12-11T10:36:07.927Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://doveli.xyz/2019/10/23/springBoot/"/>
+  <link rel="canonical" href="http://doveli.xyz/2019/12/11/AutoWired与Resource/"/>
 
 
 
 
 
-  <title>SpringBoot总结 | Speciali</title>
+  <title>AutoWired与Resource | Speciali</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2019/10/23/springBoot/">
+    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2019/12/11/AutoWired%E4%B8%8EResource/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Li">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot总结</h1>
+          <h1 class="post-title" itemprop="name headline">AutoWired与Resource</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-23T17:09:24+08:00">
-                2019-10-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T18:33:51+08:00">
+                2019-12-11
               </time>
             
 
@@ -357,28 +357,24 @@
       
 
       
-        <h2 id="SpringBoot相关知识点总结"><a href="#SpringBoot相关知识点总结" class="headerlink" title="SpringBoot相关知识点总结"></a>SpringBoot相关知识点总结</h2><ol>
-<li><p>SpringBoot控制层参数url路径参数注解：@PathVariable</p>
+        <h2 id="Autowired-与-Resource的区别"><a href="#Autowired-与-Resource的区别" class="headerlink" title="@Autowired 与@Resource的区别"></a>@Autowired 与@Resource的区别</h2><ul>
+<li><p>@Autowired按<strong>byType</strong>自动注入，而@Resource默认按 <strong>byName</strong>自动注入</p>
 </li>
-<li><p>springboot忽略URL地址大小写配置</p>
+<li><p>@Autowired为<strong>Spring</strong>提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired。</p>
 </li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.AntPathMatcher;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.PathMatchConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configurePathMatch</span><span class="params">(PathMatchConfigurer configurer)</span> </span>&#123;</span><br><span class="line">        AntPathMatcher matcher = <span class="keyword">new</span> AntPathMatcher();</span><br><span class="line">        matcher.setCaseSensitive(<span class="keyword">false</span>);</span><br><span class="line">        configurer.setPathMatcher(matcher);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
-
-
-<ol start="3">
-<li>SpringBoot通过RequestContextHolder获取HttpRequest和HttpResponse</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">HttpServletRequest request = requestAttributes.getRequest();</span><br><span class="line">HttpServletResponse response = requestAttributes.getResponse();</span><br></pre></td></tr></table></figure>
-
-<ol start="5">
-<li><p>Springboot中yml文件中参数的值都是String类型</p>
+<li><p>@Resource注解由<strong>J2EE</strong>提供，需要导入包javax.annotation.Resource。</p>
 </li>
-<li><p>Spring Boot+Spring Security+JWT 实现 RESTful Api 权限控制：<br><a href="https://blog.csdn.net/sxdtzhaoxinguo/article/details/77965226" target="_blank" rel="noopener">https://blog.csdn.net/sxdtzhaoxinguo/article/details/77965226</a></p>
+<li><p>@Autowired与@Resource都可以用来装配bean. 都可以写在字段上,或写在setter方法上。</p>
 </li>
-</ol>
+</ul>
+<h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><p> @Autowired默认按类型装配，默认情况下必须要求依赖对象必须存在，如果要允许null值，可以设置它的required属性为false，如：<code>**@Autowired(required=false)** ，</code></p>
+<p>当一个类型有多个bean值的时候，会造成无法选择具体注入哪一个的情况，这个时候我们需要配合着@Qualifier使用。</p>
+<p>@Qualifier告诉spring具体去装配哪个对象。如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span>()<span class="meta">@Qualifier</span>(<span class="string">"baseDao"</span>)</span><br><span class="line">privateBaseDao baseDao;</span><br></pre></td></tr></table></figure>
+
+<p><strong>@Autowired原理详解 ：</strong><br><a href="https://blog.csdn.net/weixin_40423597/article/details/80643990" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40423597/article/details/80643990</a></p>
+<p><strong>在容器启动，为对象赋值的时候，遇到@Autowired注解，会用后置处理器机制，来创建属性的实例，然后再利用反射机制，将实例化好的属性，赋值给对象上，这就是Autowired的原理。</strong></p>
+<h4 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h4><p>@Resource有两个属性是比较重要的，分是name和type，Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。<br>所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。<br>如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略。</p>
 
       
     </div>
@@ -428,7 +424,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://doveli.xyz/2019/10/23/springBoot/" title="SpringBoot总结">http://doveli.xyz/2019/10/23/springBoot/</a>
+    <a href="http://doveli.xyz/2019/12/11/AutoWired%E4%B8%8EResource/" title="AutoWired与Resource">http://doveli.xyz/2019/12/11/AutoWired%E4%B8%8EResource/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -453,7 +449,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
+            <a href="/tags/java/" rel="tag"><i class="fa fa-tag"></i> java</a>
           
         </div>
       
@@ -466,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/22/summary/" rel="next" title="项目总结（持续更新）">
-                <i class="fa fa-chevron-left"></i> 项目总结（持续更新）
+              <a href="/2019/12/09/calendar/" rel="next" title="calendar">
+                <i class="fa fa-chevron-left"></i> calendar
               </a>
             
           </div>
@@ -475,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/10/23/jpa/" rel="prev" title="JPA总结">
-                JPA总结 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -624,7 +616,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot相关知识点总结"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot相关知识点总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Autowired-与-Resource的区别"><span class="nav-number">1.</span> <span class="nav-text">@Autowired 与@Resource的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Autowired"><span class="nav-number">1.0.1.</span> <span class="nav-text">@Autowired</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Resource"><span class="nav-number">1.0.2.</span> <span class="nav-text">@Resource</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
