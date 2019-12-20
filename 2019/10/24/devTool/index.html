@@ -95,7 +95,7 @@
 <meta property="og:description" content="开发工具日常使用总结 idea intellJ 添加类的头部统一注释File——》Setting-——》Editor——》File and Code Templates找到Includes下面的File Header，之后可以在右面的文本框中自定义注释格式。  提示忽略大小写File——》Sensitive将右侧的 case sensitive completion 修改为NONE  Intell">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;1.jpg">
-<meta property="og:updated_time" content="2019-11-30T07:23:21.767Z">
+<meta property="og:updated_time" content="2019-12-17T10:06:11.620Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;24&#x2F;devTool&#x2F;1.jpg">
 
@@ -396,7 +396,7 @@
 <ol start="4">
 <li>项目打包到服务器命令</li>
 </ol>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">netstat -tunlp                显示进程</span><br><span class="line">Kill 进程号                   杀死进程</span><br><span class="line">Cd /usr/local/bin/            到目录</span><br><span class="line">Ls -l                         显示所有文件</span><br><span class="line">Mkdir pm20181105              创建文件夹</span><br><span class="line">Rz -y                         上传</span><br><span class="line">nohup java -jar im-po.war &gt;&gt;po.out &amp;  执行</span><br><span class="line">tail -f po.out                发布项目</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>-tunlp                  显示进程</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">netstat -lnp | grep 7004        显示已知端口号进程</span><br><span class="line">Kill  -9  进程号                 杀死进程</span><br><span class="line">Cd /usr/local/bin/              到目录</span><br><span class="line">Ls -l                           显示所有文件</span><br><span class="line">Mkdir pm20181105                创建文件夹</span><br><span class="line">Rz -y                           上传</span><br><span class="line">nohup java -jar im-po.war &gt;&gt;po.out &amp;  发布并输入到po.out日志</span><br><span class="line">tail -f po.out                        查看日志</span><br></pre></td></tr></table></figure>
 
 
 
