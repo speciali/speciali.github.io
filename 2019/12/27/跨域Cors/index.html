@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="Calendar Date 日期时间日常使用总结Date与String互转 Calendar转化为DateCalendar cal=Calendar.getInstance();Date date=cal.getTime();    Date转化为CalendarDate date=new Date();Calendar cal=Calendar.getInstance();cal.setTime">
+<meta name="description" content="使用CORS解决跨域问题跨域问题1.1 什么是跨域跨域是指跨域名的访问，以下情况都属于跨域： 域名不同    www.jd.com 与 www.taobao.com域名相同，端口不同    www.jd.com:8080 与 www.jd.com:8081二级域名不同    item.jd.com 与 miaosha.jd.com如果域名和端口都相同，但是请求路径不同，不属于跨域，如：www.jd">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="calendar">
-<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;12&#x2F;09&#x2F;calendar&#x2F;index.html">
+<meta property="og:title" content="跨域Cors">
+<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;12&#x2F;27&#x2F;%E8%B7%A8%E5%9F%9FCors&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="Calendar Date 日期时间日常使用总结Date与String互转 Calendar转化为DateCalendar cal=Calendar.getInstance();Date date=cal.getTime();    Date转化为CalendarDate date=new Date();Calendar cal=Calendar.getInstance();cal.setTime">
+<meta property="og:description" content="使用CORS解决跨域问题跨域问题1.1 什么是跨域跨域是指跨域名的访问，以下情况都属于跨域： 域名不同    www.jd.com 与 www.taobao.com域名相同，端口不同    www.jd.com:8080 与 www.jd.com:8081二级域名不同    item.jd.com 与 miaosha.jd.com如果域名和端口都相同，但是请求路径不同，不属于跨域，如：www.jd">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-09T10:45:28.077Z">
+<meta property="og:updated_time" content="2019-12-27T05:43:06.808Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://doveli.xyz/2019/12/09/calendar/"/>
+  <link rel="canonical" href="http://doveli.xyz/2019/12/27/跨域Cors/"/>
 
 
 
 
 
-  <title>calendar | Speciali</title>
+  <title>跨域Cors | Speciali</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2019/12/09/calendar/">
+    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2019/12/27/%E8%B7%A8%E5%9F%9FCors/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Li">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">calendar</h1>
+          <h1 class="post-title" itemprop="name headline">跨域Cors</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-09T18:19:52+08:00">
-                2019-12-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-27T12:10:58+08:00">
+                2019-12-27
               </time>
             
 
@@ -357,90 +357,46 @@
       
 
       
-        <h2 id="Calendar-Date-日期时间日常使用总结"><a href="#Calendar-Date-日期时间日常使用总结" class="headerlink" title="Calendar Date 日期时间日常使用总结"></a>Calendar Date 日期时间日常使用总结</h2><h4 id="Date与String互转"><a href="#Date与String互转" class="headerlink" title="Date与String互转"></a>Date与String互转</h4><ul>
-<li><p>Calendar转化为Date<br>Calendar cal=Calendar.getInstance();<br>Date date=cal.getTime();  </p>
-<ul>
-<li>Date转化为Calendar<br>Date date=new Date();<br>Calendar cal=Calendar.getInstance();<br>cal.setTime(date);</li>
-</ul>
-</li>
-</ul>
-<h4 id="Calendar"><a href="#Calendar" class="headerlink" title="Calendar"></a>Calendar</h4><p>成员方法<br>Calendar类的成员方法<br><strong>static Calendar getInstance()</strong></p>
-<p>使用默认时区和区域设置获取日历。通过该方法生成Calendar对象。<strong>Calendar cr=Calendar.getInstance()；</strong></p>
-<p><strong>public void set(int year,int month,int date,int hourofday,int minute,int second)</strong>    设置日历的年、月、日、时、分、秒。</p>
-<p><strong>public int get(int field)</strong>    返回给定日历字段的值。所谓字段就是年、月、日等等。</p>
-<p><strong>public void setTime(Date date)</strong>    使用给定的Date设置此日历的时间。</p>
-<p><strong>public Date getTime()</strong>    返回一个Date表示此日历的时间。</p>
-<p><strong>abstract void add(int field,int amount)</strong>    按照日历的规则，给指定字段添加或减少时间量。</p>
-<p><strong>public long getTimeInMillies()</strong>    以毫秒为单位返回该日历的时间值。</p>
-<ol>
-<li><p>当天24点时间<br>public static Date getTimesnight() {</p>
-<pre><code>Calendar cal = Calendar.getInstance();
-cal.set(Calendar.HOUR_OF_DAY, 24);
-cal.set(Calendar.SECOND, 0);
-cal.set(Calendar.MINUTE, 0);
-cal.set(Calendar.MILLISECOND, 0);
-return cal.getTime();</code></pre><p>}</p>
-</li>
-<li><p>获得当天0点时间<br>public static Date getTimesmorning() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.set(Calendar.HOUR_OF_DAY, 0);<br>   cal.set(Calendar.SECOND, 0);<br>   cal.set(Calendar.MINUTE, 0);<br>   cal.set(Calendar.MILLISECOND, 0);<br>   return cal.getTime();<br>}</p>
-</li>
-<li><p>获得昨天0点时间<br>public static Date getYesterdaymorning() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.setTimeInMillis(getTimesmorning().getTime()-3600<em>24</em>1000);<br>   return cal.getTime();<br>}</p>
-</li>
-<li><p>获得当天近7天时间<br>public static Date getWeekFromNow() {</p>
-<pre><code>Calendar cal = Calendar.getInstance();
-cal.setTimeInMillis( getTimesmorning().getTime()-3600*24*1000*7);
-return cal.getTime();</code></pre><p>}</p>
-</li>
-<li><p>获得本周一0点时间<br>public static Date getTimesWeekmorning() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);<br>   cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);<br>   return cal.getTime();<br>}</p>
-</li>
-<li><p>获得上一周周一日期<br>public static Date getLastWeekmorning(Date date) {<br> Calendar cal = Calendar.getInstance();<br> cal.setTime(date);<br> cal.add(Calendar.WEEK_OF_MONTH,-1);<br> cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);<br> cal.set(Calendar.DAY_OF_WEEK, Calendar.MONDAY);<br> return cal.getTime();<br>}</p>
-</li>
-</ol>
-<ol start="6">
-<li>获得本周日24点时间<br>public static Date getTimesWeeknight() {<br>   Calendar cal = Calendar.getInstance();<br>   cal.setTime(getTimesWeekmorning());<br>   cal.add(Calendar.DAY_OF_WEEK, 7);<br>   return cal.getTime();<br>}</li>
-</ol>
-<ol start="7">
-<li><p>获得本月第一天0点时间<br>public static Date getTimesMonthmorning() {</p>
-<pre><code>Calendar cal = Calendar.getInstance();
-cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
-cal.set(Calendar.DAY_OF_MONTH, cal.getActualMinimum(Calendar.DAY_OF_MONTH));
-return cal.getTime();</code></pre><p>}</p>
-</li>
-<li><p>获得本月最后一天24点时间<br>public static Date getTimesMonthnight() {</p>
-<pre><code>Calendar cal = Calendar.getInstance();
-cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);
-cal.set(Calendar.DAY_OF_MONTH, cal.getActualMaximum(Calendar.DAY_OF_MONTH));
-cal.set(Calendar.HOUR_OF_DAY, 24);
-return cal.getTime();</code></pre><p>}</p>
-<ol start="9">
-<li>上月初0点时间<br>public static Date getLastMonthStartMorning() {<br> Calendar cal = Calendar.getInstance();<br> cal.setTime(getTimesMonthmorning());<br> cal.add(Calendar.MONTH, -1);<br> return cal.getTime();<br>}</li>
-<li>本季度开始点时间<br>public static Date getCurrentQuarterStartTime() {<br>Calendar c = Calendar.getInstance();<br>int currentMonth = c.get(Calendar.MONTH) + 1;<br>SimpleDateFormat longSdf = new SimpleDateFormat(“yyyy-MM-dd HH:mm:ss”);<br>SimpleDateFormat shortSdf = new SimpleDateFormat(“yyyy-MM-dd”);<br>Date now = null;<br>try {<pre><code>if (currentMonth &gt;= 1 &amp;&amp; currentMonth &lt;= 3)
-    c.set(Calendar.MONTH, 0);
-else if (currentMonth &gt;= 4 &amp;&amp; currentMonth &lt;= 6)
-    c.set(Calendar.MONTH, 3);
-else if (currentMonth &gt;= 7 &amp;&amp; currentMonth &lt;= 9)
-    c.set(Calendar.MONTH, 4);
-else if (currentMonth &gt;= 10 &amp;&amp; currentMonth &lt;= 12)
-    c.set(Calendar.MONTH, 9);
-c.set(Calendar.DATE, 1);
-now = longSdf.parse(shortSdf.format(c.getTime()) + &quot; 00:00:00&quot;);</code></pre>} catch (Exception e) {<pre><code>e.printStackTrace();</code></pre>}<br>return now;<br>}</li>
-</ol>
-</li>
-<li><p>当前季度的结束时时间</p>
-<p>public static Date getCurrentQuarterEndTime() {</p>
-<pre><code>Calendar cal = Calendar.getInstance();
-cal.setTime(getCurrentQuarterStartTime());
-cal.add(Calendar.MONTH, 3);
-return cal.getTime();</code></pre><p>}</p>
-<ol start="12">
-<li><p>本年开始点时间<br>public static Date getCurrentYearStartTime() {<br>Calendar cal = Calendar.getInstance();<br>cal.set(cal.get(Calendar.YEAR), cal.get(Calendar.MONDAY), cal.get(Calendar.DAY_OF_MONTH), 0, 0, 0);<br>cal.set(Calendar.DAY_OF_MONTH, cal.getActualMinimum(Calendar.YEAR));<br>return cal.getTime();<br>}</p>
-</li>
-<li><p>本年结束点时间<br>public static Date getCurrentYearEndTime() {<br>Calendar cal = Calendar.getInstance();<br>cal.setTime(getCurrentYearStartTime());<br>cal.add(Calendar.YEAR, 1);<br>return cal.getTime();<br>}</p>
-</li>
-<li><p>上年开始点时间<br>public static Date getLastYearStartTime() {<br>Calendar cal = Calendar.getInstance();<br>cal.setTime(getCurrentYearStartTime());<br>cal.add(Calendar.YEAR, -1);<br>return cal.getTime();<br>}</p>
-</li>
-</ol>
-</li>
-</ol>
+        <h2 id="使用CORS解决跨域问题"><a href="#使用CORS解决跨域问题" class="headerlink" title="使用CORS解决跨域问题"></a>使用CORS解决跨域问题</h2><h4 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h4><p>1.1 什么是跨域<br>跨域是指跨域名的访问，以下情况都属于跨域：</p>
+<p><strong>域名不同</strong>    <a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a> 与 <a href="http://www.taobao.com" target="_blank" rel="noopener">www.taobao.com</a><br><strong>域名相同，端口不同</strong>    <a href="http://www.jd.com:8080" target="_blank" rel="noopener">www.jd.com:8080</a> 与 <a href="http://www.jd.com:8081" target="_blank" rel="noopener">www.jd.com:8081</a><br><strong>二级域名不同</strong>    item.jd.com 与 miaosha.jd.com<br><strong>如果域名和端口都相同，但是请求路径不同，不属于跨域</strong>，如：<br><a href="http://www.jd.com/item" target="_blank" rel="noopener">www.jd.com/item</a><br><a href="http://www.jd.com/goods" target="_blank" rel="noopener">www.jd.com/goods</a></p>
+<p>1.2 为什么有跨域问题？<br>跨域不一定会有跨域问题。</p>
+<p>因为跨域问题是<strong>浏览器对于ajax请求的一种安全限制</strong>：一个页面发起的ajax请求，只能是于当前页同域名的路径，这能有效的阻止跨站攻击。</p>
+<p>因此：跨域问题 是针对ajax的一种限制。</p>
+<p>1.3 解决跨域问题的方案<br>目前比较常用的跨域解决方案有3种：<br><strong>Jsonp</strong><br>最早的解决方案，利用script标签可以跨域的原理实现。<br>限制：<br>需要服务的支持<br>只能发起GET请求<br>Jsonp原理与实践</p>
+<p><strong>nginx反向代理</strong></p>
+<p>思路是：利用nginx反向代理把跨域为不跨域，支持各种请求方式<br>缺点：需要在nginx进行额外配置，语义不清晰</p>
+<p><strong>CORS</strong><br>规范化的跨域请求解决方案，安全可靠。</p>
+<p>优势：<br>在服务端进行控制是否允许跨域，可自定义规则<br>支持各种请求方式<br>缺点：<br>会产生额外的请求<br>我们这里会采用cors的跨域方案。</p>
+<p>2 cors解决跨域<br>2.1 什么是cors<br><strong>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。</strong></p>
+<p>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能<strong>同源</strong>使用的限制。</p>
+<p>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。</p>
+<p>浏览器端：</p>
+<p>目前，所有浏览器都支持该功能（IE10以下不行）。整个CORS通信过程，都是浏览器自动完成，不需要用户参与。</p>
+<p>服务端：</p>
+<p>CORS通信与AJAX没有任何差别，因此你不需要改变以前的业务逻辑。只不过，浏览器会在请求中携带一些头信息，我们需要以此判断是否运行其跨域，然后在响应头中加入一些信息即可。这一般通过过滤器完成即可。</p>
+<p>2.2 原理有点复杂<br>浏览器会将ajax请求分为两类，其处理方案略有差异：简单请求、特殊请求。</p>
+<p>简单请求<br>只要同时满足以下两大条件，就属于简单请求。：</p>
+<p>（1) 请求方法是以下三种方法之一：</p>
+<p><strong>HEAD<br>GET<br>POST</strong><br>（2）HTTP的头信息不超出以下几种字段：</p>
+<p><strong>Accept<br>Accept-Language<br>Content-Language<br>Last-Event-ID</strong><br>Content-Type：只限于三个值application/x-www-form-urlencoded、multipart/form-data、text/plain<br>当浏览器发现发现的ajax请求是简单请求时，会在请求头中携带一个字段：Origin.</p>
+<p><strong>Origin中会指出当前请求属于哪个域（协议+域名+端口）。服务会根据这个值决定是否允许其跨域。</strong></p>
+<p>如果服务器允许跨域，需要在返回的响应头中携带下面信息：</p>
+<p>Access-Control-Allow-Origin: <a href="http://manage.leyou.com" target="_blank" rel="noopener">http://manage.leyou.com</a><br>Access-Control-Allow-Credentials: true<br>Content-Type: text/html; charset=utf-8<br>Access-Control-Allow-Origin：可接受的域，是一个具体域名或者*，代表任意<br>Access-Control-Allow-Credentials：是否允许携带cookie，默认情况下，cors不会携带cookie，除非这个值是true<br>注意：</p>
+<p>如果跨域请求要想操作cookie，需要满足3个条件：</p>
+<p>服务的响应头中需要携带Access-Control-Allow-Credentials并且为true。<br>浏览器发起ajax需要指定withCredentials 为true<br>响应头中的Access-Control-Allow-Origin一定不能为*，必须是指定的域名<br>特殊请求<br>不符合简单请求的条件，会被浏览器判定为特殊请求,，例如请求方式为PUT。</p>
+<p>预检请求</p>
+<p>特殊请求会在正式通信之前，增加一次HTTP查询请求，称为”预检”请求（preflight）。</p>
+<p>浏览器先询问服务器，当前网页所在的域名是否在服务器的许可名单之中，以及可以使用哪些HTTP动词和头信息字段。只有得到肯定答复，浏览器才会发出正式的XMLHttpRequest请求，否则就报错。</p>
+<p>一个“预检”请求的样板：</p>
+<p>OPTIONS /cors HTTP/1.1<br>Origin: <a href="http://manage.leyou.com" target="_blank" rel="noopener">http://manage.leyou.com</a><br>Access-Control-Request-Method: PUT<br>Access-Control-Request-Headers: X-Custom-Header<br>Host: api.leyou.com<br>Accept-Language: en-US<br>Connection: keep-alive<br>User-Agent: Mozilla/5.0…<br>与简单请求相比，除了Origin以外，多了两个头：</p>
+<p>Access-Control-Request-Method：接下来会用到的请求方式，比如PUT<br>Access-Control-Request-Headers：会额外用到的头信息<br>预检请求的响应</p>
+<p>服务的收到预检请求，如果许可跨域，会发出响应：</p>
+<p>HTTP/1.1 200 OK<br>Date: Mon, 01 Dec 2008 01:15:39 GMT<br>Server: Apache/2.0.61 (Unix)<br>Access-Control-Allow-Origin: <a href="http://manage.leyou.com" target="_blank" rel="noopener">http://manage.leyou.com</a><br>Access-Control-Allow-Credentials: true<br>Access-Control-Allow-Methods: GET, POST, PUT<br>Access-Control-Allow-Headers: X-Custom-Header<br>Access-Control-Max-Age: 1728000<br>Content-Type: text/html; charset=utf-8<br>Content-Encoding: gzip<br>Content-Length: 0<br>Keep-Alive: timeout=2, max=100<br>Connection: Keep-Alive<br>Content-Type: text/plain<br>除了Access-Control-Allow-Origin和Access-Control-Allow-Credentials以外，这里又额外多出3个头：</p>
+<p>Access-Control-Allow-Methods：允许访问的方式<br>Access-Control-Allow-Headers：允许携带的头<br>Access-Control-Max-Age：本次许可的有效时长，单位是秒，过期之前的ajax请求就无需再次进行预检了<br>如果浏览器得到上述响应，则认定为可以跨域，后续就跟简单请求的处理是一样的了。</p>
+<p>2.3 实现非常简单<br>虽然原理比较复杂，但是前面说过：</p>
+<p>浏览器端都有浏览器自动完成，我们无需操心<br>服务端可以通过拦截器统一实现，不必每次都去进行跨域判定的编写。<br>事实上，SpringMVC已经帮我们写好了CORS的跨域过滤器：CorsFilter ,内部已经实现了刚才所讲的判定逻辑，我们直接用就好了。</p>
+<p>在Application下编写一个配置类，并且注册CorsFilter：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.CorsConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.UrlBasedCorsConfigurationSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.filter.CorsFilter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalCorsConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CorsFilter <span class="title">corsFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1.添加CORS配置信息</span></span><br><span class="line">        CorsConfiguration config = <span class="keyword">new</span> CorsConfiguration();</span><br><span class="line">        <span class="comment">//1) 允许的域,不要写*，否则cookie就无法使用了</span></span><br><span class="line">        config.addAllowedOrigin(<span class="string">"http://manage.leyou.com"</span>);</span><br><span class="line">        <span class="comment">//2) 是否发送Cookie信息</span></span><br><span class="line">        config.setAllowCredentials(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">//3) 允许的请求方式</span></span><br><span class="line">        config.addAllowedMethod(<span class="string">"OPTIONS"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"HEAD"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"GET"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"PUT"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"POST"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"DELETE"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"PATCH"</span>);</span><br><span class="line">        <span class="comment">// 4）允许的头信息</span></span><br><span class="line">        config.addAllowedHeader(<span class="string">"*"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.添加映射路径，我们拦截一切请求</span></span><br><span class="line">        UrlBasedCorsConfigurationSource configSource = <span class="keyword">new</span> UrlBasedCorsConfigurationSource();</span><br><span class="line">        configSource.registerCorsConfiguration(<span class="string">"/**"</span>, config);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.返回新的CorsFilter.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CorsFilter(configSource);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -490,7 +446,7 @@ return cal.getTime();</code></pre><p>}</p>
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://doveli.xyz/2019/12/09/calendar/" title="calendar">http://doveli.xyz/2019/12/09/calendar/</a>
+    <a href="http://doveli.xyz/2019/12/27/%E8%B7%A8%E5%9F%9FCors/" title="跨域Cors">http://doveli.xyz/2019/12/27/%E8%B7%A8%E5%9F%9FCors/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -528,8 +484,8 @@ return cal.getTime();</code></pre><p>}</p>
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/11/30/java8/" rel="next" title="java8新特性">
-                <i class="fa fa-chevron-left"></i> java8新特性
+              <a href="/2019/12/11/AutoWired%E4%B8%8EResource/" rel="next" title="AutoWired与Resource">
+                <i class="fa fa-chevron-left"></i> AutoWired与Resource
               </a>
             
           </div>
@@ -537,10 +493,6 @@ return cal.getTime();</code></pre><p>}</p>
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/12/11/AutoWired%E4%B8%8EResource/" rel="prev" title="AutoWired与Resource">
-                AutoWired与Resource <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -686,7 +638,7 @@ return cal.getTime();</code></pre><p>}</p>
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Calendar-Date-日期时间日常使用总结"><span class="nav-number">1.</span> <span class="nav-text">Calendar Date 日期时间日常使用总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Date与String互转"><span class="nav-number">1.0.1.</span> <span class="nav-text">Date与String互转</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Calendar"><span class="nav-number">1.0.2.</span> <span class="nav-text">Calendar</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用CORS解决跨域问题"><span class="nav-number">1.</span> <span class="nav-text">使用CORS解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">跨域问题</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
