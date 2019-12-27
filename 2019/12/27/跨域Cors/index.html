@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="使用CORS解决跨域问题跨域问题1.1 什么是跨域跨域是指跨域名的访问，以下情况都属于跨域： 域名不同    www.jd.com 与 www.taobao.com域名相同，端口不同    www.jd.com:8080 与 www.jd.com:8081二级域名不同    item.jd.com 与 miaosha.jd.com如果域名和端口都相同，但是请求路径不同，不属于跨域，如：www.jd">
+<meta name="description" content="使用CORS解决跨域问题1.1 什么是跨域跨域是指跨域名的访问，以下情况都属于跨域： 域名不同    www.jd.com 与 www.taobao.com域名相同，端口不同    www.jd.com:8080 与 www.jd.com:8081二级域名不同    item.jd.com 与 miaosha.jd.com如果域名和端口都相同，但是请求路径不同，不属于跨域，如：www.jd.com">
 <meta name="keywords" content="java">
 <meta property="og:type" content="article">
-<meta property="og:title" content="跨域Cors">
+<meta property="og:title" content="使用CORS解决跨域问题">
 <meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;12&#x2F;27&#x2F;%E8%B7%A8%E5%9F%9FCors&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="使用CORS解决跨域问题跨域问题1.1 什么是跨域跨域是指跨域名的访问，以下情况都属于跨域： 域名不同    www.jd.com 与 www.taobao.com域名相同，端口不同    www.jd.com:8080 与 www.jd.com:8081二级域名不同    item.jd.com 与 miaosha.jd.com如果域名和端口都相同，但是请求路径不同，不属于跨域，如：www.jd">
+<meta property="og:description" content="使用CORS解决跨域问题1.1 什么是跨域跨域是指跨域名的访问，以下情况都属于跨域： 域名不同    www.jd.com 与 www.taobao.com域名相同，端口不同    www.jd.com:8080 与 www.jd.com:8081二级域名不同    item.jd.com 与 miaosha.jd.com如果域名和端口都相同，但是请求路径不同，不属于跨域，如：www.jd.com">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-27T05:43:06.808Z">
+<meta property="og:updated_time" content="2019-12-27T05:47:34.196Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <title>跨域Cors | Speciali</title>
+  <title>使用CORS解决跨域问题 | Speciali</title>
   
 
 
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">跨域Cors</h1>
+          <h1 class="post-title" itemprop="name headline">使用CORS解决跨域问题</h1>
         
 
         <div class="post-meta">
@@ -357,24 +357,24 @@
       
 
       
-        <h2 id="使用CORS解决跨域问题"><a href="#使用CORS解决跨域问题" class="headerlink" title="使用CORS解决跨域问题"></a>使用CORS解决跨域问题</h2><h4 id="跨域问题"><a href="#跨域问题" class="headerlink" title="跨域问题"></a>跨域问题</h4><p>1.1 什么是跨域<br>跨域是指跨域名的访问，以下情况都属于跨域：</p>
+        <h2 id="使用CORS解决跨域问题"><a href="#使用CORS解决跨域问题" class="headerlink" title="使用CORS解决跨域问题"></a>使用CORS解决跨域问题</h2><h4 id="1-1-什么是跨域"><a href="#1-1-什么是跨域" class="headerlink" title="1.1 什么是跨域"></a>1.1 什么是跨域</h4><p>跨域是指跨域名的访问，以下情况都属于跨域：</p>
 <p><strong>域名不同</strong>    <a href="http://www.jd.com" target="_blank" rel="noopener">www.jd.com</a> 与 <a href="http://www.taobao.com" target="_blank" rel="noopener">www.taobao.com</a><br><strong>域名相同，端口不同</strong>    <a href="http://www.jd.com:8080" target="_blank" rel="noopener">www.jd.com:8080</a> 与 <a href="http://www.jd.com:8081" target="_blank" rel="noopener">www.jd.com:8081</a><br><strong>二级域名不同</strong>    item.jd.com 与 miaosha.jd.com<br><strong>如果域名和端口都相同，但是请求路径不同，不属于跨域</strong>，如：<br><a href="http://www.jd.com/item" target="_blank" rel="noopener">www.jd.com/item</a><br><a href="http://www.jd.com/goods" target="_blank" rel="noopener">www.jd.com/goods</a></p>
-<p>1.2 为什么有跨域问题？<br>跨域不一定会有跨域问题。</p>
+<h4 id="1-2-为什么有跨域问题？"><a href="#1-2-为什么有跨域问题？" class="headerlink" title="1.2 为什么有跨域问题？"></a>1.2 为什么有跨域问题？</h4><p>跨域不一定会有跨域问题。</p>
 <p>因为跨域问题是<strong>浏览器对于ajax请求的一种安全限制</strong>：一个页面发起的ajax请求，只能是于当前页同域名的路径，这能有效的阻止跨站攻击。</p>
 <p>因此：跨域问题 是针对ajax的一种限制。</p>
-<p>1.3 解决跨域问题的方案<br>目前比较常用的跨域解决方案有3种：<br><strong>Jsonp</strong><br>最早的解决方案，利用script标签可以跨域的原理实现。<br>限制：<br>需要服务的支持<br>只能发起GET请求<br>Jsonp原理与实践</p>
+<h4 id="1-3-解决跨域问题的方案"><a href="#1-3-解决跨域问题的方案" class="headerlink" title="1.3 解决跨域问题的方案"></a>1.3 解决跨域问题的方案</h4><p>目前比较常用的跨域解决方案有3种：<br><strong>Jsonp</strong><br>最早的解决方案，利用script标签可以跨域的原理实现。<br>限制：<br>需要服务的支持<br>只能发起GET请求<br>Jsonp原理与实践</p>
 <p><strong>nginx反向代理</strong></p>
 <p>思路是：利用nginx反向代理把跨域为不跨域，支持各种请求方式<br>缺点：需要在nginx进行额外配置，语义不清晰</p>
 <p><strong>CORS</strong><br>规范化的跨域请求解决方案，安全可靠。</p>
 <p>优势：<br>在服务端进行控制是否允许跨域，可自定义规则<br>支持各种请求方式<br>缺点：<br>会产生额外的请求<br>我们这里会采用cors的跨域方案。</p>
-<p>2 cors解决跨域<br>2.1 什么是cors<br><strong>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。</strong></p>
+<h4 id="2-cors解决跨域"><a href="#2-cors解决跨域" class="headerlink" title="2 cors解决跨域"></a>2 cors解决跨域</h4><h4 id="2-1-什么是cors"><a href="#2-1-什么是cors" class="headerlink" title="2.1 什么是cors"></a>2.1 什么是cors</h4><p><strong>CORS是一个W3C标准，全称是”跨域资源共享”（Cross-origin resource sharing）。</strong></p>
 <p>它允许浏览器向跨源服务器，发出XMLHttpRequest请求，从而克服了AJAX只能<strong>同源</strong>使用的限制。</p>
 <p>CORS需要浏览器和服务器同时支持。目前，所有浏览器都支持该功能，IE浏览器不能低于IE10。</p>
 <p>浏览器端：</p>
 <p>目前，所有浏览器都支持该功能（IE10以下不行）。整个CORS通信过程，都是浏览器自动完成，不需要用户参与。</p>
 <p>服务端：</p>
 <p>CORS通信与AJAX没有任何差别，因此你不需要改变以前的业务逻辑。只不过，浏览器会在请求中携带一些头信息，我们需要以此判断是否运行其跨域，然后在响应头中加入一些信息即可。这一般通过过滤器完成即可。</p>
-<p>2.2 原理有点复杂<br>浏览器会将ajax请求分为两类，其处理方案略有差异：简单请求、特殊请求。</p>
+<h4 id="2-2-原理"><a href="#2-2-原理" class="headerlink" title="2.2 原理"></a>2.2 原理</h4><p>浏览器会将ajax请求分为两类，其处理方案略有差异：简单请求、特殊请求。</p>
 <p>简单请求<br>只要同时满足以下两大条件，就属于简单请求。：</p>
 <p>（1) 请求方法是以下三种方法之一：</p>
 <p><strong>HEAD<br>GET<br>POST</strong><br>（2）HTTP的头信息不超出以下几种字段：</p>
@@ -393,7 +393,7 @@
 <p>服务的收到预检请求，如果许可跨域，会发出响应：</p>
 <p>HTTP/1.1 200 OK<br>Date: Mon, 01 Dec 2008 01:15:39 GMT<br>Server: Apache/2.0.61 (Unix)<br>Access-Control-Allow-Origin: <a href="http://manage.leyou.com" target="_blank" rel="noopener">http://manage.leyou.com</a><br>Access-Control-Allow-Credentials: true<br>Access-Control-Allow-Methods: GET, POST, PUT<br>Access-Control-Allow-Headers: X-Custom-Header<br>Access-Control-Max-Age: 1728000<br>Content-Type: text/html; charset=utf-8<br>Content-Encoding: gzip<br>Content-Length: 0<br>Keep-Alive: timeout=2, max=100<br>Connection: Keep-Alive<br>Content-Type: text/plain<br>除了Access-Control-Allow-Origin和Access-Control-Allow-Credentials以外，这里又额外多出3个头：</p>
 <p>Access-Control-Allow-Methods：允许访问的方式<br>Access-Control-Allow-Headers：允许携带的头<br>Access-Control-Max-Age：本次许可的有效时长，单位是秒，过期之前的ajax请求就无需再次进行预检了<br>如果浏览器得到上述响应，则认定为可以跨域，后续就跟简单请求的处理是一样的了。</p>
-<p>2.3 实现非常简单<br>虽然原理比较复杂，但是前面说过：</p>
+<h4 id="2-3-实现非常简单"><a href="#2-3-实现非常简单" class="headerlink" title="2.3 实现非常简单"></a>2.3 实现非常简单</h4><p>虽然原理比较复杂，但是前面说过：</p>
 <p>浏览器端都有浏览器自动完成，我们无需操心<br>服务端可以通过拦截器统一实现，不必每次都去进行跨域判定的编写。<br>事实上，SpringMVC已经帮我们写好了CORS的跨域过滤器：CorsFilter ,内部已经实现了刚才所讲的判定逻辑，我们直接用就好了。</p>
 <p>在Application下编写一个配置类，并且注册CorsFilter：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Bean;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.CorsConfiguration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.cors.UrlBasedCorsConfigurationSource;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.filter.CorsFilter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GlobalCorsConfig</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> CorsFilter <span class="title">corsFilter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">//1.添加CORS配置信息</span></span><br><span class="line">        CorsConfiguration config = <span class="keyword">new</span> CorsConfiguration();</span><br><span class="line">        <span class="comment">//1) 允许的域,不要写*，否则cookie就无法使用了</span></span><br><span class="line">        config.addAllowedOrigin(<span class="string">"http://manage.leyou.com"</span>);</span><br><span class="line">        <span class="comment">//2) 是否发送Cookie信息</span></span><br><span class="line">        config.setAllowCredentials(<span class="keyword">true</span>);</span><br><span class="line">        <span class="comment">//3) 允许的请求方式</span></span><br><span class="line">        config.addAllowedMethod(<span class="string">"OPTIONS"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"HEAD"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"GET"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"PUT"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"POST"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"DELETE"</span>);</span><br><span class="line">        config.addAllowedMethod(<span class="string">"PATCH"</span>);</span><br><span class="line">        <span class="comment">// 4）允许的头信息</span></span><br><span class="line">        config.addAllowedHeader(<span class="string">"*"</span>);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//2.添加映射路径，我们拦截一切请求</span></span><br><span class="line">        UrlBasedCorsConfigurationSource configSource = <span class="keyword">new</span> UrlBasedCorsConfigurationSource();</span><br><span class="line">        configSource.registerCorsConfiguration(<span class="string">"/**"</span>, config);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//3.返回新的CorsFilter.</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> CorsFilter(configSource);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -446,7 +446,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://doveli.xyz/2019/12/27/%E8%B7%A8%E5%9F%9FCors/" title="跨域Cors">http://doveli.xyz/2019/12/27/%E8%B7%A8%E5%9F%9FCors/</a>
+    <a href="http://doveli.xyz/2019/12/27/%E8%B7%A8%E5%9F%9FCors/" title="使用CORS解决跨域问题">http://doveli.xyz/2019/12/27/%E8%B7%A8%E5%9F%9FCors/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -638,7 +638,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用CORS解决跨域问题"><span class="nav-number">1.</span> <span class="nav-text">使用CORS解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#跨域问题"><span class="nav-number">1.0.1.</span> <span class="nav-text">跨域问题</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#使用CORS解决跨域问题"><span class="nav-number">1.</span> <span class="nav-text">使用CORS解决跨域问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-什么是跨域"><span class="nav-number">1.0.1.</span> <span class="nav-text">1.1 什么是跨域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-为什么有跨域问题？"><span class="nav-number">1.0.2.</span> <span class="nav-text">1.2 为什么有跨域问题？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-3-解决跨域问题的方案"><span class="nav-number">1.0.3.</span> <span class="nav-text">1.3 解决跨域问题的方案</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-cors解决跨域"><span class="nav-number">1.0.4.</span> <span class="nav-text">2 cors解决跨域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-什么是cors"><span class="nav-number">1.0.5.</span> <span class="nav-text">2.1 什么是cors</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-2-原理"><span class="nav-number">1.0.6.</span> <span class="nav-text">2.2 原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-3-实现非常简单"><span class="nav-number">1.0.7.</span> <span class="nav-text">2.3 实现非常简单</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
