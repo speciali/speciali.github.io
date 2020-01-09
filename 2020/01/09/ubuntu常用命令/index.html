@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="SpringBoot," />
+  <meta name="keywords" content="Ubuntu," />
 
 
 
@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="SpringBoot相关知识点总结 SpringBoot控制层参数url路径参数注解：@PathVariable  springboot忽略URL地址大小写配置   1234567891011121314import org.springframework.context.annotation.Configuration;import org.springframework.util.AntPat">
-<meta name="keywords" content="SpringBoot">
+<meta name="description" content="Ubuntu 常用命令常见问题 修改全局配置文件,并生效  123sudo geidt &#x2F;etc&#x2F;profilesource &#x2F;etc&#x2F;profile     文件管理1.mkdir       创建目录2.mkdir -p    递归创建目录 例:mkdir A&#x2F;B&#x2F;C -p3.touch       创建文件4.rmdir       删除空目录5.rm          删除文件和目录">
+<meta name="keywords" content="Ubuntu">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SpringBoot总结">
-<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2019&#x2F;10&#x2F;23&#x2F;springBoot&#x2F;index.html">
+<meta property="og:title" content="ubuntu常用命令">
+<meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2020&#x2F;01&#x2F;09&#x2F;ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="SpringBoot相关知识点总结 SpringBoot控制层参数url路径参数注解：@PathVariable  springboot忽略URL地址大小写配置   1234567891011121314import org.springframework.context.annotation.Configuration;import org.springframework.util.AntPat">
+<meta property="og:description" content="Ubuntu 常用命令常见问题 修改全局配置文件,并生效  123sudo geidt &#x2F;etc&#x2F;profilesource &#x2F;etc&#x2F;profile     文件管理1.mkdir       创建目录2.mkdir -p    递归创建目录 例:mkdir A&#x2F;B&#x2F;C -p3.touch       创建文件4.rmdir       删除空目录5.rm          删除文件和目录">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-10-24T00:59:22.177Z">
+<meta property="og:updated_time" content="2020-01-09T11:02:29.983Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://doveli.xyz/2019/10/23/springBoot/"/>
+  <link rel="canonical" href="http://doveli.xyz/2020/01/09/ubuntu常用命令/"/>
 
 
 
 
 
-  <title>SpringBoot总结 | Speciali</title>
+  <title>ubuntu常用命令 | Speciali</title>
   
 
 
@@ -268,7 +268,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2019/10/23/springBoot/">
+    <link itemprop="mainEntityOfPage" href="http://doveli.xyz/2020/01/09/ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Zhang Li">
@@ -285,7 +285,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">SpringBoot总结</h1>
+          <h1 class="post-title" itemprop="name headline">ubuntu常用命令</h1>
         
 
         <div class="post-meta">
@@ -297,8 +297,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-23T17:09:24+08:00">
-                2019-10-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-09T18:46:19+08:00">
+                2020-01-09
               </time>
             
 
@@ -357,29 +357,124 @@
       
 
       
-        <h2 id="SpringBoot相关知识点总结"><a href="#SpringBoot相关知识点总结" class="headerlink" title="SpringBoot相关知识点总结"></a>SpringBoot相关知识点总结</h2><ol>
-<li><p>SpringBoot控制层参数url路径参数注解：@PathVariable</p>
-</li>
-<li><p>springboot忽略URL地址大小写配置</p>
-</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.AntPathMatcher;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.PathMatchConfigurer;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">WebConfig</span> <span class="keyword">extends</span> <span class="title">WebMvcConfigurerAdapter</span></span>&#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">configurePathMatch</span><span class="params">(PathMatchConfigurer configurer)</span> </span>&#123;</span><br><span class="line">        AntPathMatcher matcher = <span class="keyword">new</span> AntPathMatcher();</span><br><span class="line">        matcher.setCaseSensitive(<span class="keyword">false</span>);</span><br><span class="line">        configurer.setPathMatcher(matcher);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h2 id="Ubuntu-常用命令"><a href="#Ubuntu-常用命令" class="headerlink" title="Ubuntu 常用命令"></a>Ubuntu 常用命令</h2><h3 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h3><ul>
+<li>修改全局配置文件,并生效</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo geidt /etc/profile</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 
 
 
+<p> 文件管理<br>1.mkdir       创建目录<br>2.mkdir -p    递归创建目录 例:mkdir A/B/C -p<br>3.touch       创建文件<br>4.rmdir       删除空目录<br>5.rm          删除文件和目录<br>    -i           以进行交互式执行<br>    -f           强制删除<br>    -r           以递归方式删除，可删除递归式目录<br>6.cd     //change directory   改变所在目录<br>  cd ~        跳转到当前用户的家目<br>  cd -        跳转到上一次所在路径</p>
+<p>7.ls     // list   查看目录下内容<br>    -a            列举目录中的全部文件，包括隐藏文件<br>    -l            列举目录中细节，包括权限、所有者、群组、大小、创建日期、文件是否是链接等<br>    -h            以人类可读的方式显示文件的大小，如用K、M、G作单位<br>  ls *            *表示任意多个字符，也可以没有<br>                  ?表示一个字符，一定有1个，不能没有<br>                  [xn]表示中括号中的任意1个字符<br>                  [abcdef]可以写成[a-f]：表示a-f中的任意1个字符<br>8.tree            以目录树的方式显示文件结构<br>9.cp   // copy   复制文件<br>            -r                递归复制，用于复制整个目录树、子目录以及其他<br>            -f                强制复制<br>            -i                交互式复制<br>            -v                显示拷贝进度</p>
+<p>10、mv  // move   移动<br>            -f                强制移动<br>            -i                交互式移动<br>            -v                显示移动进度<br>11. grep   // global regular expression print，全局正则表达式打印  在文件中查找某字符</p>
+<pre><code>-v              显示不包含匹配文本的所有行（相当于求反）
+-n              显示匹配行及行号  例如 grep -n ‘t’ a.txt
+-i              忽略大小写   </code></pre><h3 id="网络操作命令"><a href="#网络操作命令" class="headerlink" title="网络操作命令"></a>网络操作命令</h3><p>1、ifconfig            // network interfaces configuring   查看和配置网络设备<br>2、ping                 // ping   对一个网址发送测试数据包，以此测试网络<br>3、ssh                   // secure shell   远程登录Linux<br>                -l                        指定用户，<br>                -p                       指定端口</p>
+<pre><code>例如： 
 
-<ol start="3">
-<li>SpringBoot通过RequestContextHolder获取HttpRequest和HttpResponse</li>
-</ol>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();</span><br><span class="line">HttpServletRequest request = requestAttributes.getRequest();</span><br><span class="line">HttpServletResponse response = requestAttributes.getResponse();</span><br></pre></td></tr></table></figure>
+              1. 无选项参数运行 SSH：ssh 192.168.1.12
+              2.指定登陆用户：ssh  -I liu 192.168.1.12    or    ssh liu@192.168.1.12</code></pre><p>4、scp              // ecure copy   用于在Linux下进行远程拷贝文件的命令</p>
+<pre><code>-1  强制scp命令使用协议ssh1  
 
-<ol start="5">
-<li><p>Springboot中yml文件中参数的值都是String类型</p>
-</li>
-<li><p>Spring Boot+Spring Security+JWT 实现 RESTful Api 权限控制：<br><a href="https://blog.csdn.net/sxdtzhaoxinguo/article/details/77965226" target="_blank" rel="noopener">https://blog.csdn.net/sxdtzhaoxinguo/article/details/77965226</a></p>
-</li>
-</ol>
+-2  强制scp命令使用协议ssh2  
 
+-4  强制scp命令只使用IPv4寻址  
+
+-6  强制scp命令只使用IPv6寻址  
+
+-B  使用批处理模式（传输过程中不询问传输口令或短语）  
+
+-C  允许压缩。（将-C标志传递给ssh，从而打开压缩功能）  
+
+-p 保留原文件的修改时间，访问时间和访问权限。  
+
+-q  不显示传输进度条。  
+
+-r  递归复制整个目录。  
+
+-v 详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。   
+
+-c cipher  以cipher将数据传输进行加密，这个选项将直接传递给ssh。   
+
+-F ssh_config  指定一个替代的ssh配置文件，此参数直接传递给ssh。  
+
+-i identity_file  从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。    
+
+-l limit  限定用户所能使用的带宽，以Kbit/s为单位。     
+
+-o ssh_option  如果习惯于使用ssh_config(5)中的参数传递方式，   
+
+-P port  注意是大写的P, port是指定数据传输用到的端口号   
+
+-S program  指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项
+
+命令格式：  
+
+        scp local_file remote_username@remote_ip:remote_folder  
+
+        或者  
+
+        scp local_file remote_username@remote_ip:remote_file  
+
+        或者  
+
+        scp local_file remote_ip:remote_folder  
+
+        或者  
+
+        scp local_file remote_ip:remote_file                 
+
+        ** 第1,2个指定了用户名，命令执行后需要输入用户密码，第1个仅指定了远程的目录，文件名字不变，第2个指定了文件名  
+
+        ** 第3,4个没有指定用户名，命令执行后需要输入用户名和密码，第3个仅指定了远程的目录，文件名字不变，第4个指定了文件名   </code></pre><h3 id="系统管理命令"><a href="#系统管理命令" class="headerlink" title="系统管理命令"></a>系统管理命令</h3><p>1、stat                // status   显示指定文件的详细信息，比ls更详细<br>2、who                 // who   显示在线登陆用户<br>    a、last                //查看最近用户的登录记录<br>    b、cat /etc/passwd     //查看所有用户列表<br>3、whoami          // who am I   显示当前操作用户<br>4、hostname        // host name   显示主机名<br>5、uname           //  Unix name   显示系统信息<br>6、top             // top   动态显示当前耗费资源最多进程信息<br>7、ps              // process status   显示瞬间进程状态 ps -aux</p>
+<pre><code>-a                    显示终端上的所有的进程，包括其他用户的进程
+-u                    显示进程的详细信息
+-x                    显示没有控制终端的进程
+-w                   显示加宽，以便显示更多的信息
+-r                     只显示正在运行的进程</code></pre><p>8、kill  // kill   杀死进程，可以先用ps 或 top命令查看进程的id，然后再用kill命令杀死进程。kill -9 pid 强制杀进程<br>9、du                  // disk usage   硬盘使用率，查看目录大小 du -h /home带有单位显示目录信息<br>10、df                 // disk free   查看磁盘大小 df -h 带有单位显示磁盘信息<br>11、clear              // clear   清屏<br>12、alias               //  Create your own name for a command    对命令重命名 如：alias showmeit=”ps -aux” ，另外解除使用unaliax showmeit</p>
+<h3 id="关机、重启命令"><a href="#关机、重启命令" class="headerlink" title="关机、重启命令"></a>关机、重启命令</h3><p>1、reboot           // reboot 重启操作系统<br>2、shutdown      // shutdown 正常关机<br>            shutdown -r now            重启系统，shutdown会给别的用户提示<br>            shutdown -h now           立刻关机，其中now相当于时间为0的状态<br>            shutdown -h 20:25         系统在今天的20:25关机<br>            shutdown -h +10            系统再过10分钟关机<br>3、halt                 // halt   关机<br>4、init                  // initialization<br>            init 0            关机<br>            init 1            重启</p>
+<p>Linux软件包管理<br>1、dpkg (Debian Package)管理工具，软件包名以.deb后缀。这种方法适合系统不能联网的情况下。</p>
+<p>比如安装tree命令的安装包，先将tree.deb传到Linux系统中。再使用如下命令安装。</p>
+<pre><code>sudo dpkg -i tree_1.5.3-1_i386.deb         安装软件
+
+sudo dpkg -r tree                          卸载软件</code></pre><p>2、APT（Advanced Packaging Tool）高级软件工具。这种方法适合系统能够连接互联网的情况。</p>
+<p>依然以tree为例</p>
+<p>apt-cache search package                             搜索包  </p>
+<p>apt-cache show package                               获取包的相关信息，如说明、大小、版本等  </p>
+<p>apt-cache depends package                            了解使用依赖  </p>
+<p>apt-cache rdepends package                           查看该包被哪些包依赖  </p>
+<p>apt-get source package                               下载该包的源代码  </p>
+<p>sudo apt-get install package                         安装包  </p>
+<p>sudo apt-get install package=version                 装指定版本的包  </p>
+<p>sudo apt-get install package –reinstall             重新安装包  </p>
+<p>sudo apt-get -f install                              修复安装, “-f = –fix-missing”  </p>
+<p>sudo apt-get remove package                          删除包  </p>
+<p>sudo apt-get remove package –purge                  删除包，包括删除配置文件等  </p>
+<p>sudo apt-get update                                  更新apt软件源信息  </p>
+<p>sudo apt-get upgrade                                 更新已安装的包  </p>
+<p>sudo apt-get dist-upgrade                            升级系统  </p>
+<p>sudo apt-get dselect-upgrade                         使用dselect升级  </p>
+<p>sudo apt-get build-dep package                       安装相关的编译环境  </p>
+<p>sudo apt-get clean &amp;&amp; sudo apt-get autoclean         清理无用的包  </p>
+<p>sudo apt-get check                                   检查是否有损坏的依赖     </p>
+<p> 将.rpm文件转为.deb文件</p>
+<pre><code>    .rpm为RedHat使用的软件格式。在Ubuntu下不能直接使用，所以需要转换一下。
+
+    sudo alien abc.rpm
+
+注意：
+
+    Ubuntu的软件源文件是/etc/apt/sources.list
+    Ubuntu中apt-get的默认安装路径 
+    apt-get下载后，软件的所在路径: /var/cache/apt/archives
+    Ubuntu默认的PATH为:
+    PATH=/home/brightman/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:
+    apt-get install安装目录是包的维护者定的，不是用户。 
+    系统安装软件一般在/usr/share
+    可执行的文件在/usr/bin
+    配置文件可能安装到了/etc
+    文档一般在/usr/share 
+    lib文件在/usr/lib​</code></pre>
       
     </div>
     
@@ -428,7 +523,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://doveli.xyz/2019/10/23/springBoot/" title="SpringBoot总结">http://doveli.xyz/2019/10/23/springBoot/</a>
+    <a href="http://doveli.xyz/2020/01/09/ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="ubuntu常用命令">http://doveli.xyz/2020/01/09/ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -453,7 +548,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SpringBoot/" rel="tag"><i class="fa fa-tag"></i> SpringBoot</a>
+            <a href="/tags/Ubuntu/" rel="tag"><i class="fa fa-tag"></i> Ubuntu</a>
           
         </div>
       
@@ -466,8 +561,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/10/22/summary/" rel="next" title="项目总结（持续更新）">
-                <i class="fa fa-chevron-left"></i> 项目总结（持续更新）
+              <a href="/2019/12/27/%E8%B7%A8%E5%9F%9FCors/" rel="next" title="使用CORS解决跨域问题">
+                <i class="fa fa-chevron-left"></i> 使用CORS解决跨域问题
               </a>
             
           </div>
@@ -476,8 +571,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/10/23/jpa/" rel="prev" title="JPA总结">
-                JPA总结 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/01/09/git%E6%B7%BB%E5%8A%A0%E5%85%AC%E9%92%A5%E6%8A%A5%E9%94%99/" rel="prev" title="git添加公钥报错">
+                git添加公钥报错 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -624,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SpringBoot相关知识点总结"><span class="nav-number">1.</span> <span class="nav-text">SpringBoot相关知识点总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-常用命令"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu 常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见问题"><span class="nav-number">1.1.</span> <span class="nav-text">常见问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网络操作命令"><span class="nav-number">1.2.</span> <span class="nav-text">网络操作命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#系统管理命令"><span class="nav-number">1.3.</span> <span class="nav-text">系统管理命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关机、重启命令"><span class="nav-number">1.4.</span> <span class="nav-text">关机、重启命令</span></a></li></ol></li></ol></div>
             
 
           </div>
