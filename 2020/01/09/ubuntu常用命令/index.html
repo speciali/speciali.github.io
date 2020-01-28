@@ -86,15 +86,15 @@
 
 
 
-<meta name="description" content="Ubuntu 常用命令常见问题 修改全局配置文件,并生效  123sudo geidt &#x2F;etc&#x2F;profilesource &#x2F;etc&#x2F;profile     文件管理1.mkdir       创建目录2.mkdir -p    递归创建目录 例:mkdir A&#x2F;B&#x2F;C -p3.touch       创建文件4.rmdir       删除空目录5.rm          删除文件和目录">
+<meta name="description" content="Ubuntu 常用命令常见问题 修改全局配置文件,并生效  123sudo geidt &#x2F;etc&#x2F;profilesource &#x2F;etc&#x2F;profile    复制文件夹内所有文件到另一个文件夹？  cp -Rf &#x2F;home&#x2F;user1&#x2F;* &#x2F;root&#x2F;temp&#x2F;将 &#x2F;home&#x2F;user1目录下的所有东西拷到&#x2F;root&#x2F;temp&#x2F;下而不拷贝user1目录本身。  文件管理1.mkdir">
 <meta name="keywords" content="Ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ubuntu常用命令">
 <meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2020&#x2F;01&#x2F;09&#x2F;ubuntu%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="Ubuntu 常用命令常见问题 修改全局配置文件,并生效  123sudo geidt &#x2F;etc&#x2F;profilesource &#x2F;etc&#x2F;profile     文件管理1.mkdir       创建目录2.mkdir -p    递归创建目录 例:mkdir A&#x2F;B&#x2F;C -p3.touch       创建文件4.rmdir       删除空目录5.rm          删除文件和目录">
+<meta property="og:description" content="Ubuntu 常用命令常见问题 修改全局配置文件,并生效  123sudo geidt &#x2F;etc&#x2F;profilesource &#x2F;etc&#x2F;profile    复制文件夹内所有文件到另一个文件夹？  cp -Rf &#x2F;home&#x2F;user1&#x2F;* &#x2F;root&#x2F;temp&#x2F;将 &#x2F;home&#x2F;user1目录下的所有东西拷到&#x2F;root&#x2F;temp&#x2F;下而不拷贝user1目录本身。  文件管理1.mkdir">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-09T11:10:10.928Z">
+<meta property="og:updated_time" content="2020-01-13T09:27:09.214Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -363,7 +363,10 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo geidt /etc/profile</span><br><span class="line"></span><br><span class="line">source /etc/profile</span><br></pre></td></tr></table></figure>
 
 
-
+<ul>
+<li>复制文件夹内所有文件到另一个文件夹？</li>
+</ul>
+<p>cp -Rf /home/user1/* /root/temp/<br>将 /home/user1目录下的所有东西拷到/root/temp/下而不拷贝user1目录本身。</p>
 <p> 文件管理<br>1.mkdir       创建目录<br>2.mkdir -p    递归创建目录 例:mkdir A/B/C -p<br>3.touch       创建文件<br>4.rmdir       删除空目录<br>5.rm          删除文件和目录<br>    -i           以进行交互式执行<br>    -f           强制删除<br>    -r           以递归方式删除，可删除递归式目录<br>6.cd     //change directory   改变所在目录<br>  cd ~        跳转到当前用户的家目<br>  cd -        跳转到上一次所在路径</p>
 <p>7.ls     // list   查看目录下内容<br>    -a            列举目录中的全部文件，包括隐藏文件<br>    -l            列举目录中细节，包括权限、所有者、群组、大小、创建日期、文件是否是链接等<br>    -h            以人类可读的方式显示文件的大小，如用K、M、G作单位<br>  ls *            *表示任意多个字符，也可以没有<br>                  ?表示一个字符，一定有1个，不能没有<br>                  [xn]表示中括号中的任意1个字符<br>                  [abcdef]可以写成[a-f]：表示a-f中的任意1个字符<br>8.tree            以目录树的方式显示文件结构<br>9.cp   // copy   复制文件<br>            -r                递归复制，用于复制整个目录树、子目录以及其他<br>            -f                强制复制<br>            -i                交互式复制<br>            -v                显示拷贝进度</p>
 <p>10、mv  // move   移动<br>            -f                强制移动<br>            -i                交互式移动<br>            -v                显示移动进度<br>11. grep   // global regular expression print，全局正则表达式打印  在文件中查找某字符</p>
@@ -654,7 +657,7 @@ sudo dpkg -r tree                          卸载软件</code></pre><p>2、APT�
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -665,7 +668,7 @@ sudo dpkg -r tree                          卸载软件</code></pre><p>2、APT�
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
