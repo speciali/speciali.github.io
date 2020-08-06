@@ -94,7 +94,7 @@
 <meta property="og:site_name" content="Speciali">
 <meta property="og:description" content="@Autowired 与@Resource的区别 @Autowired按byType自动注入，而@Resource默认按 byName自动注入  @Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired。  @Resource注解由J2EE提供，需要导入包javax.annotation.R">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-12-11T10:36:07.927Z">
+<meta property="og:updated_time" content="2020-03-30T10:21:33.159Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -373,6 +373,9 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Autowired</span>()<span class="meta">@Qualifier</span>(<span class="string">"baseDao"</span>)</span><br><span class="line">privateBaseDao baseDao;</span><br></pre></td></tr></table></figure>
 
 <p><strong>@Autowired原理详解 ：</strong><br><a href="https://blog.csdn.net/weixin_40423597/article/details/80643990" target="_blank" rel="noopener">https://blog.csdn.net/weixin_40423597/article/details/80643990</a></p>
+<p>在spring框架内部实现当中，注解实现注入主要是通过bean后置处理器BeanPostProcessor接口的实现类来生效的。BeanPostProcessor后置处理器是在spring容器启动时，创建bean对象实例后，马上执行的，对bean对象实例进行加工处理。</p>
+<p>@Autowired是通过BeanPostProcessor接口的实现类AutowiredAnnotationBeanPostProcessor来实现对bean对象对其他bean对象的依赖注入的；</p>
+<p>@Resource和@Inject是通过BeanPostProcessor接口的实现类CommonAnnotationBeanPostProcessor来实现的，其中如名字所述，即公共注解CommonAnotation，CommonAnnotationBeanPostProcessor是spring中统一处理JDK中定义的注解的一个BeanPostProcessor。该类会处理的注解还包括@PostConstruct，@PreDestroy等。</p>
 <p><strong>在容器启动，为对象赋值的时候，遇到@Autowired注解，会用后置处理器机制，来创建属性的实例，然后再利用反射机制，将实例化好的属性，赋值给对象上，这就是Autowired的原理。</strong></p>
 <h4 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h4><p>@Resource有两个属性是比较重要的，分是name和type，Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。<br>所以如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。<br>如果既不指定name也不指定type属性，这时将通过反射机制使用byName自动注入策略。</p>
 
@@ -555,7 +558,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">26</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
