@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="react," />
 
 
 
@@ -86,15 +86,16 @@
 
 
 
-<meta name="description" content="前端项目开发问题总结作为一个前端新手，近期也担任了几个小项目的前端开发，进阶过程免不了各种问题。 感谢测试小姐姐还有自己发现的问题。以下做个总结。 Form表单数据处理 对于设置了name的FormItem，setState不能更新表单数据，需要使用Form的setFieldsValue来更新。下图为官方文档说明。">
+<meta name="description" content="前端项目开发问题总结作为一个前端新手，近期也担任了几个小项目的前端开发，进阶过程免不了各种问题。 感谢测试小姐姐还有自己发现的问题。以下做个总结。 Form表单数据处理 对于设置了name的FormItem，setState不能更新表单数据，需要使用Form的setFieldsValue来更新。下图为官方文档说明。  解决处理： 123456789101.创建react中refimport &amp;#1">
+<meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端项目开发总结">
 <meta property="og:url" content="http:&#x2F;&#x2F;doveli.xyz&#x2F;2020&#x2F;08&#x2F;06&#x2F;%E5%89%8D%E7%AB%AF%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E6%80%BB%E7%BB%93&#x2F;index.html">
 <meta property="og:site_name" content="Speciali">
-<meta property="og:description" content="前端项目开发问题总结作为一个前端新手，近期也担任了几个小项目的前端开发，进阶过程免不了各种问题。 感谢测试小姐姐还有自己发现的问题。以下做个总结。 Form表单数据处理 对于设置了name的FormItem，setState不能更新表单数据，需要使用Form的setFieldsValue来更新。下图为官方文档说明。">
+<meta property="og:description" content="前端项目开发问题总结作为一个前端新手，近期也担任了几个小项目的前端开发，进阶过程免不了各种问题。 感谢测试小姐姐还有自己发现的问题。以下做个总结。 Form表单数据处理 对于设置了name的FormItem，setState不能更新表单数据，需要使用Form的setFieldsValue来更新。下图为官方文档说明。  解决处理： 123456789101.创建react中refimport &amp;#1">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20200806203755218.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNjE3OTU0,size_16,color_FFFFFF,t_70">
-<meta property="og:updated_time" content="2020-08-06T12:45:04.645Z">
+<meta property="og:updated_time" content="2020-08-07T10:18:46.249Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;img-blog.csdnimg.cn&#x2F;20200806203755218.png?x-oss-process=image&#x2F;watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNjE3OTU0,size_16,color_FFFFFF,t_70">
 
@@ -309,6 +310,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/js/" itemprop="url" rel="index">
+                    <span itemprop="name">js</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -339,6 +362,19 @@
         <h2 id="前端项目开发问题总结"><a href="#前端项目开发问题总结" class="headerlink" title="前端项目开发问题总结"></a>前端项目开发问题总结</h2><pre><code>作为一个前端新手，近期也担任了几个小项目的前端开发，进阶过程免不了各种问题。
 感谢测试小姐姐还有自己发现的问题。以下做个总结。</code></pre><ol>
 <li>Form表单数据处理 对于设置了name的FormItem，setState不能更新表单数据，需要使用Form的setFieldsValue来更新。下图为官方文档说明。<br><img src="https://img-blog.csdnimg.cn/20200806203755218.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQyNjE3OTU0,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></li>
+</ol>
+<p>解决处理：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>.创建react中ref</span><br><span class="line"><span class="keyword">import</span> &#123;creatRef&#125; from <span class="string">'react'</span></span><br><span class="line"><span class="keyword">this</span>.formRef = createRef()；</span><br><span class="line"><span class="number">2</span>.将值转发到Form组件</span><br><span class="line">Ref 转发是一项将 ref 自动地通过组件传递到其一子组件的技巧。</span><br><span class="line">&lt;Form</span><br><span class="line"> ref=&#123;<span class="keyword">this</span>.formRef&#125;</span><br><span class="line">&gt;</span><br><span class="line"><span class="number">3</span>.在需要的方法中修改Form值</span><br><span class="line"><span class="keyword">this</span>.formRef.current.setFieldsValue(&#123;...&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>Form中一些校验<br> rule中属性<br> whitespace : 如果字段仅包含空格则校验不通过(例如name）<br> max: string 类型为字符串最大长度；number 类型时为最大值；array 类型时为数组最大长度    </p>
+</li>
+<li><p>this.setState.time.add(‘2’,’hour’)直接改变state中的值</p>
+</li>
+<li><p>筛选框数据与分页操作时要注意数据隔离，不然会出现如下情况：<br> 筛选条件输入后，未点击确认筛选，直接点击分页，展示的是筛选条件后的数据；<br> 跳转到第二页后再筛选数据，如果返回的数据不够第二页展示，页面会为空；<br> 因为getData(params),params中筛选条件数据与分页的数据共享。</p>
+</li>
+<li><p>RangePicker 时间选择控件<br>value如果初始值设置为null,控件选择的日期为当前时分秒，会以天整加，timeEnd日期就会出现选择9号，而展示10号场景。<br>解决方案1：设置初始值为当前日期0点0分0秒</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">timeFrom: moment().startOf(<span class="string">'day'</span>).subtract(<span class="number">6</span>,<span class="string">'day'</span>);</span><br><span class="line">timeTo: moment().endOf(<span class="string">'day'</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>2：控件change时修改值         </code></pre><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;RangePicker</span><br><span class="line">   disabledDate=&#123;<span class="keyword">this</span>.disableDate&#125; </span><br><span class="line">   value=&#123;[timeFromNum, timeToNum]&#125;</span><br><span class="line">   onChange=&#123;(value, dateString) =&gt; &#123;</span><br><span class="line">     <span class="keyword">if</span> (value &amp;&amp; value.length === <span class="number">2</span>) &#123;</span><br><span class="line">       console.log(<span class="string">'string==='</span>, dateString)</span><br><span class="line">       <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">         timeFromNum: moment(dateString[<span class="number">0</span>]),</span><br><span class="line">         timeToNum: moment(dateString[<span class="number">1</span>]).endOf(<span class="string">'d'</span>),</span><br><span class="line">       &#125;);</span><br><span class="line">     &#125;</span><br><span class="line">   &#125;&#125;</span><br><span class="line"> /&gt;</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -411,6 +447,12 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/react/" rel="tag"><i class="fa fa-tag"></i> react</a>
+          
+        </div>
       
 
       
@@ -521,7 +563,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -532,7 +574,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tag/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
